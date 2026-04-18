@@ -1,13 +1,11 @@
 class_name Invisibility
 extends Node2D
 
-@export var is_hidden: bool = false
 @export var time_visible: float = 3
 
 func _enter_tree() -> void:
-	if is_hidden:	
-		Signaler.make_visible.connect(make_visible)
-		visible = false
+	Signaler.make_visible.connect(make_visible)
+	visible = false
 
 func make_visible() -> void:
 	visible = true
