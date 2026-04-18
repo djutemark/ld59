@@ -9,8 +9,12 @@ extends CharacterBody2D
 
 var original_position: Vector2
 var current_checkpoint: Checkpoint = null
+var num_warnings: int = 0
 
 var collected_keys: int = 0
+
+signal warning_activated
+signal warning_deactivated
 
 var respawn_position:
 	get: return current_checkpoint.position if current_checkpoint != null else original_position
@@ -20,6 +24,14 @@ func _ready() -> void:
 	%Signaler.settings = signal_settings
 	HUD.max_signal_uses = signal_settings.max_usage
 	
+	%WarningSprite.visible = false
+	warning_activated.connect(func(): 
+		%WarningSprite.visible = true
+	)
+	warning_deactivated.connect(func(): 
+		%WarningSprite.visible = false
+	)
+
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("use_signaler"):
@@ -74,3 +86,17 @@ func take_damage() -> void:
 
 func take_key(key: Key.KeyType) -> void:
 	collected_keys |= key
+
+
+func _on_warning_entered(other: Node2D) -> void:
+	if Invisibility.try_get_invisibility(other) != null:
+		if num_warnings == 0:
+			warning_activated.emit()
+		num_warnings += 1
+	
+
+func _on_warning_exited(other: Node2D) -> void:
+	if Invisibility.try_get_invisibility(other) != null:
+		num_warnings -= 1
+		if num_warnings == 0:
+			warning_deactivated.emit()

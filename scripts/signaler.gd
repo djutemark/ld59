@@ -49,10 +49,16 @@ func reset_signals() -> void:
 	HUD.current_signal_uses = num_uses
 
 
-func _on_body_entered(body: Node2D) -> void:
-	var invisibilities = body.find_children("*", "Invisibility", false)
+func try_activate_invisibility(other: Node2D) -> void:
+	var invisible_node: Invisibility = Invisibility.try_get_invisibility(other)
 	
-	if invisibilities.size() > 0:
-		var invisible_node = invisibilities[0] as Invisibility
+	if invisible_node != null:
 		invisible_node.make_visible()
 		current_visible_invisibiles.append(invisible_node)
+
+func _on_body_entered(body: Node2D) -> void:
+	try_activate_invisibility(body)
+
+
+func _on_area_entered(area: Area2D) -> void:
+	try_activate_invisibility(area)

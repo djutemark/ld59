@@ -3,9 +3,17 @@
 [ext_resource type="Script" uid="uid://cye1ysqxsbcxa" path="res://scripts/player.gd" id="1_ykyjo"]
 [ext_resource type="Texture2D" uid="uid://dnnmy42ccarbc" path="res://alienGreen.png" id="2_ykyjo"]
 [ext_resource type="PackedScene" uid="uid://d0aaxhajvply8" path="res://objects/signaler.tscn" id="3_nmc1l"]
+[ext_resource type="Texture2D" uid="uid://b7swtng3asa25" path="res://monochrome_tilemap_transparent.png" id="4_nmc1l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ykyjo"]
 size = Vector2(10, 14)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f46kd"]
+radius = 42.0119
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rerk"]
+atlas = ExtResource("4_nmc1l")
+region = Rect2(125, 55, 4, 8)
 
 [node name="Player" type="CharacterBody2D" unique_id=56246929]
 script = ExtResource("1_ykyjo")
@@ -19,3 +27,19 @@ shape = SubResource("RectangleShape2D_ykyjo")
 
 [node name="Signaler" parent="." unique_id=1239735612 instance=ExtResource("3_nmc1l")]
 unique_name_in_owner = true
+
+[node name="WarningArea" type="Area2D" parent="." unique_id=1801311715]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WarningArea" unique_id=360710779]
+shape = SubResource("CircleShape2D_f46kd")
+debug_color = Color(0.5168811, 0.5757751, 0, 0.52400005)
+
+[node name="WarningSprite" type="Sprite2D" parent="." unique_id=1942484175]
+unique_name_in_owner = true
+position = Vector2(0, -15)
+texture = SubResource("AtlasTexture_3rerk")
+
+[connection signal="area_entered" from="WarningArea" to="." method="_on_warning_entered"]
+[connection signal="area_exited" from="WarningArea" to="." method="_on_warning_exited"]
+[connection signal="body_entered" from="WarningArea" to="." method="_on_warning_entered"]
+[connection signal="body_exited" from="WarningArea" to="." method="_on_warning_exited"]
