@@ -11,7 +11,7 @@ region = Rect2(152, 60, 18, 15)
 size = Vector2(13, 4.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8u5f"]
-size = Vector2(12, 4)
+size = Vector2(12, 5)
 
 [node name="Spikes" type="StaticBody2D" unique_id=1481858940]
 script = ExtResource("1_f3r3t")
@@ -28,7 +28,7 @@ metadata/_edit_lock_ = true
 [node name="Area2D" type="Area2D" parent="." unique_id=1026001838]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1911774195]
-position = Vector2(0, 2)
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_m8u5f")
 debug_color = Color(0.99607843, 0, 0, 0.41960785)
 

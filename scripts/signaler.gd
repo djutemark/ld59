@@ -28,6 +28,7 @@ func make_signal() -> void:
 		var t = create_tween()
 		t.set_parallel(true)
 		t.set_trans(settings.growth_type)
+		t.set_ease(Tween.EASE_OUT)
 		t.tween_property(shape, "radius", settings.max_radius, settings.grow_duration)
 		t.tween_property(%PulseSprite, "scale", RADIUS_SPRITE_RATIO * Vector2(settings.max_radius, settings.max_radius), settings.grow_duration)
 		await t.finished
