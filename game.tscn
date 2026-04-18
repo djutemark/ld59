@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dt7ygoxqoqkbj" path="res://levels/level_1.tscn" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://bmimicae0in6j" path="res://objects/player.tscn" id="2_e2o6t"]
+[ext_resource type="Script" uid="uid://dvloye4naumf2" path="res://scripts/player_camera.gd" id="3_feb5d"]
 
 [node name="Game" type="Node2D" unique_id=2094557731]
 
@@ -9,3 +10,10 @@
 
 [node name="Player" parent="." unique_id=56246929 instance=ExtResource("2_e2o6t")]
 position = Vector2(88, 12)
+move_speed = 100.0
+jump_strength = 100.0
+
+[node name="PlayerCamera" type="Camera2D" parent="." unique_id=975741464 node_paths=PackedStringArray("player")]
+offset = Vector2(0, -30)
+script = ExtResource("3_feb5d")
+player = NodePath("../Player")
