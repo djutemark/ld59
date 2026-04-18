@@ -7,10 +7,14 @@ extends CharacterBody2D
 
 @export var signal_settings: SignalerSettings
 
-var start_position: Vector2
+var original_position: Vector2
+var current_checkpoint: Checkpoint = null
+
+var respawn_position:
+	get: return current_checkpoint.position if current_checkpoint != null else original_position
 
 func _ready() -> void:
-	start_position = position
+	original_position = position
 	%Signaler.settings = signal_settings
 	
 
@@ -30,8 +34,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event.keycode == KEY_ESCAPE:
 			get_tree().quit()
 		if event.keycode == KEY_R:
-			position = start_position
-			velocity = Vector2.ZERO
+			respawn()
 
 
 func apply_gravity() -> void:
@@ -49,6 +52,17 @@ func move() -> void:
 	velocity.x = horizontal * move_speed
 	
 	
+func set_checkpoint(checkpoint: Checkpoint) -> void:
+	if current_checkpoint != null:
+		current_checkpoint.dehighlight()
+	current_checkpoint = checkpoint
+	current_checkpoint.highlight()
+
+	
+func respawn() -> void:
+	position = respawn_position
+	velocity = Vector2.ZERO
+
+	
 func take_damage() -> void:
-	# TODO: Teleport to last checkpoint here	
-	pass
+	respawn()

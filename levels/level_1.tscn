@@ -3,6 +3,7 @@
 [ext_resource type="TileSet" uid="uid://dxc60ea2wixq2" path="res://tilesets/ground.tres" id="1_vn7o3"]
 [ext_resource type="PackedScene" uid="uid://b2xltvs64i35j" path="res://objects/spikes.tscn" id="2_jirdo"]
 [ext_resource type="Script" uid="uid://bk1rgvi3v0xe5" path="res://scripts/invisibility.gd" id="3_bt44k"]
+[ext_resource type="PackedScene" uid="uid://bb6dvmw14lk3l" path="res://objects/checkpoint.tscn" id="4_kx6l7"]
 
 [node name="Level 1" type="Node2D" unique_id=1630807923]
 
@@ -87,3 +88,9 @@ position = Vector2(1544, 160)
 [node name="Invisibility" type="Node" parent="Spikes9" unique_id=505615352]
 script = ExtResource("3_bt44k")
 metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
+
+[node name="Checkpoint" parent="." unique_id=764002079 instance=ExtResource("4_kx6l7")]
+position = Vector2(742, 92)
+
+[node name="Checkpoint2" parent="." unique_id=755794056 instance=ExtResource("4_kx6l7")]
+position = Vector2(1166, 91)

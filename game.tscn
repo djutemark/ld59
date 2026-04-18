@@ -16,7 +16,7 @@ metadata/_custom_type_script = "uid://lhcg5fvks6eg"
 [node name="Level 1" parent="." unique_id=1630807923 instance=ExtResource("1_80nbo")]
 
 [node name="Player" parent="." unique_id=56246929 instance=ExtResource("2_e2o6t")]
-position = Vector2(1219, 75)
+position = Vector2(87, 105)
 gravity_strength = 5.0
 move_speed = 150.0
 jump_strength = 130.0

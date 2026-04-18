@@ -30,6 +30,8 @@ func make_signal() -> void:
 		await t.finished
 		await get_tree().create_timer(settings.time_at_max_growth).timeout
 		%SignalHitbox.disabled = true
+		%PulseSprite.scale = Vector2.ZERO
+
 		
 		for invisibility in current_visible_invisibiles:
 			invisibility.make_invisible()
