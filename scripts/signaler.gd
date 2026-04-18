@@ -39,6 +39,8 @@ func make_signal() -> void:
 		for invisibility in current_visible_invisibiles:
 			invisibility.make_invisible()
 		current_visible_invisibiles.clear()
+		
+		await get_tree().create_timer(settings.cooldown)
 	is_active = false
 
 
