@@ -9,9 +9,10 @@
 [node name="Level 1" parent="." unique_id=1630807923 instance=ExtResource("1_80nbo")]
 
 [node name="Player" parent="." unique_id=56246929 instance=ExtResource("2_e2o6t")]
-position = Vector2(88, 12)
-move_speed = 100.0
-jump_strength = 100.0
+position = Vector2(88, 75)
+gravity_strength = 5.0
+move_speed = 150.0
+jump_strength = 130.0
 
 [node name="PlayerCamera" type="Camera2D" parent="." unique_id=975741464 node_paths=PackedStringArray("player")]
 offset = Vector2(0, -30)
