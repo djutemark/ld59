@@ -2,6 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://dxc60ea2wixq2" path="res://tilesets/ground.tres" id="1_vn7o3"]
 [ext_resource type="PackedScene" uid="uid://b2xltvs64i35j" path="res://objects/spikes.tscn" id="2_jirdo"]
+[ext_resource type="Script" uid="uid://bk1rgvi3v0xe5" path="res://scripts/invisibility.gd" id="3_bt44k"]
 
 [node name="Level 1" type="Node2D" unique_id=1630807923]
 
@@ -16,38 +17,37 @@ tile_map_data = PackedByteArray("AAAJAAcAAAAGAAYAAAAOAAcAAAAGAAYAAAATAAcAAAAGAAY
 tile_set = ExtResource("1_vn7o3")
 collision_enabled = false
 
-[node name="Spikes" parent="." unique_id=1481858940 instance=ExtResource("2_jirdo")]
+[node name="Invisibility" type="Node2D" parent="." unique_id=944857073]
+script = ExtResource("3_bt44k")
+time_visible = 2.0
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Invisibility" unique_id=2079946174]
+tile_map_data = PackedByteArray("AAAnAAYAAAAAAAAAAAAoAAYAAAAAAAAAAAAmAAYAAAAAAAAAAAB8AAMAAAADAAAAAAB9AAMAAAADAAAAAACBAAMAAAADAAEAAACCAAMAAAADAAEAAACDAAMAAAACAAAAAACIAAMAAAACAAAAAACKAAMAAAADAAAAAACMAAMAAAABAAAAAACOAAMAAAAAAAEAAACQAAMAAAACAAAAAACSAAMAAAACAAAAAACWAAMAAAABAAEAAACXAAMAAAADAAEAAACYAAMAAAACAAAAAAA=")
+tile_set = ExtResource("1_vn7o3")
+
+[node name="Spikes" parent="Invisibility" unique_id=1481858940 instance=ExtResource("2_jirdo")]
 position = Vector2(168, 105)
-is_hidden = true
 
-[node name="Spikes2" parent="." unique_id=1624515623 instance=ExtResource("2_jirdo")]
+[node name="Spikes2" parent="Invisibility" unique_id=1624515623 instance=ExtResource("2_jirdo")]
 position = Vector2(1475, 200)
-is_hidden = true
 
-[node name="Spikes3" parent="." unique_id=2123355713 instance=ExtResource("2_jirdo")]
+[node name="Spikes3" parent="Invisibility" unique_id=2123355713 instance=ExtResource("2_jirdo")]
 position = Vector2(1296, 200)
-is_hidden = true
 
-[node name="Spikes4" parent="." unique_id=1062971853 instance=ExtResource("2_jirdo")]
+[node name="Spikes4" parent="Invisibility" unique_id=1062971853 instance=ExtResource("2_jirdo")]
 position = Vector2(1392, 200)
-is_hidden = true
 
-[node name="Spikes5" parent="." unique_id=824486707 instance=ExtResource("2_jirdo")]
+[node name="Spikes5" parent="Invisibility" unique_id=824486707 instance=ExtResource("2_jirdo")]
 position = Vector2(1312, 200)
-is_hidden = true
 
-[node name="Spikes6" parent="." unique_id=1757344097 instance=ExtResource("2_jirdo")]
+[node name="Spikes6" parent="Invisibility" unique_id=1757344097 instance=ExtResource("2_jirdo")]
 position = Vector2(1328, 200)
-is_hidden = true
 
-[node name="Spikes7" parent="." unique_id=1807589476 instance=ExtResource("2_jirdo")]
+[node name="Spikes7" parent="Invisibility" unique_id=1807589476 instance=ExtResource("2_jirdo")]
 position = Vector2(1376, 200)
-is_hidden = true
 
-[node name="Spikes8" parent="." unique_id=1579376280 instance=ExtResource("2_jirdo")]
+[node name="Spikes8" parent="Invisibility" unique_id=1579376280 instance=ExtResource("2_jirdo")]
 position = Vector2(1576, 136)
-is_hidden = true
 
-[node name="Spikes9" parent="." unique_id=2112393628 instance=ExtResource("2_jirdo")]
+[node name="Spikes9" parent="Invisibility" unique_id=2112393628 instance=ExtResource("2_jirdo")]
 position = Vector2(1544, 160)
-is_hidden = true
