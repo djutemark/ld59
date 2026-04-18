@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bmimicae0in6j" path="res://objects/player.tscn" id="1_wt17y"]
 [ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="2_m8u5f"]
+[ext_resource type="PackedScene" uid="uid://b2xltvs64i35j" path="res://objects/spikes.tscn" id="3_m8u5f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o00ia"]
 size = Vector2(1162, 124)
@@ -10,6 +11,9 @@ size = Vector2(1162, 124)
 
 [node name="Player" parent="." unique_id=56246929 instance=ExtResource("1_wt17y")]
 position = Vector2(240, 216)
+gravity_strength = 10.0
+move_speed = 300.0
+jump_strength = 400.0
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=1136493134]
 position = Vector2(575, 500)
@@ -21,3 +25,7 @@ shape = SubResource("RectangleShape2D_o00ia")
 [node name="Sprite2D" type="Sprite2D" parent="Ground" unique_id=1538435372]
 scale = Vector2(13, 1)
 texture = ExtResource("2_m8u5f")
+
+[node name="Spikes" parent="." unique_id=1481858940 instance=ExtResource("3_m8u5f")]
+position = Vector2(704, 404)
+is_hidden = true

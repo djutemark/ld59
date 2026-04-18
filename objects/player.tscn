@@ -9,6 +9,9 @@ height = 124.0
 
 [node name="Player" type="CharacterBody2D" unique_id=56246929]
 script = ExtResource("1_ykyjo")
+gravity_strength = null
+move_speed = null
+jump_strength = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=90332107]
 position = Vector2(0, -1)
