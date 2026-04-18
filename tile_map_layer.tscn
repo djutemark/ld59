@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://cwvi08whtgkg2"]
+[gd_scene format=4 uid="uid://kekbcuo1mdme"]
 
 [ext_resource type="Texture2D" uid="uid://dqlmreqfjsh7x" path="res://tilemap.png" id="1_0ugm7"]
 
@@ -200,6 +200,7 @@ texture_region_size = Vector2i(14, 14)
 [sub_resource type="TileSet" id="TileSet_uuaxm"]
 tile_size = Vector2i(14, 14)
 uv_clipping = true
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_vqaso")
 
 [node name="TileMapLayer" type="TileMapLayer" unique_id=1913127540]

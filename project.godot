@@ -18,6 +18,13 @@ config/icon="res://icon.svg"
 
 Signaler="*uid://b2rr5k52kyotc"
 
+[display]
+
+window/size/viewport_width=360
+window/size/viewport_height=180
+window/size/window_width_override=720
+window/size/window_height_override=360
+
 [dotnet]
 
 project/assembly_name="LD59"
