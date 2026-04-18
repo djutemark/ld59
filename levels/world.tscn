@@ -7,8 +7,16 @@
 [node name="World" type="Node2D" unique_id=1989093615]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=368529249]
-tile_map_data = PackedByteArray("AAD8/wgAAAAPAAkAAAAGAAgAAAARAAkAAAAGAAkAAAARAAoAAAAGAAoAAAARAAoAAAAGAAsAAAARAAoAAAAGAAwAAAARAAoAAAD8/wwAAAAPAAoAAAD8/wsAAAAPAAoAAAD8/woAAAAPAAoAAAD8/wkAAAAPAAoAAAD9/wgAAAAQAAkAAAD+/wgAAAAQAAkAAAD//wgAAAAQAAkAAAAAAAgAAAAQAAkAAAABAAgAAAAQAAkAAAACAAgAAAAQAAkAAAADAAgAAAAQAAkAAAAEAAgAAAAQAAkAAAAFAAgAAAAQAAkAAAD8/w0AAAAPAAoAAAAGAA0AAAARAAoAAAAHAAgAAAAFAAUAAAAIAAgAAAAFAAUAAAAJAAgAAAAFAAUAAAAKAAgAAAAFAAUAAAALAAgAAAAFAAUAAAAMAAgAAAAFAAUAAAANAAgAAAAFAAUAAAAOAAgAAAAFAAUAAAAPAAgAAAAFAAUAAAAQAAgAAAAFAAUAAAARAAgAAAAFAAUAAAASAAgAAAAFAAUAAAATAAgAAAAFAAUAAAAVAAgAAAAFAAUAAAAWAAgAAAAFAAUAAAAXAAgAAAAFAAUAAAAYAAgAAAAFAAUAAAAZAAgAAAAFAAUAAAAaAAgAAAAFAAUAAAAbAAgAAAAFAAUAAAAcAAgAAAAFAAUAAAAdAAgAAAAFAAUAAAAeAAgAAAAFAAUAAAAfAAgAAAAFAAUAAAAgAAgAAAAFAAUAAAAhAAgAAAAFAAUAAAAiAAgAAAAFAAUAAAAjAAgAAAAFAAUAAAAkAAgAAAAFAAUAAAAlAAgAAAAFAAUAAAAUAAgAAAAFAAUAAAA=")
+tile_map_data = PackedByteArray("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")
 tile_set = ExtResource("1_2mgkc")
+
+[node name="TileMapLayerInv" type="TileMapLayer" parent="." unique_id=1544478346]
+tile_map_data = PackedByteArray("AAArAAYAAAAFAAUAAAAsAAYAAAAFAAUAAAAtAAYAAAAFAAUAAABmAAgAAAAFAAUAAABnAAgAAAAFAAUAAABoAAgAAAAFAAUAAABpAAgAAAAFAAUAAABqAAgAAAAFAAUAAABuAAgAAAAFAAUAAABvAAgAAAAFAAUAAABwAAgAAAAFAAUAAACLAAkAAAAEAAUAAACMAAkAAAAEAAUAAACNAAkAAAAEAAUAAACPAAcAAAAEAAUAAACQAAcAAAAEAAUAAACQAAYAAAAEAAUAAACTAAcAAAAEAAUAAACTAAgAAAAEAAUAAACUAAgAAAAEAAUAAACXAAcAAAAEAAUAAACYAAcAAAAEAAUAAACZAAcAAAAEAAUAAACaAAcAAAAEAAUAAAA=")
+tile_set = ExtResource("1_2mgkc")
+
+[node name="Invisibility" type="Node" parent="TileMapLayerInv" unique_id=237983837]
+script = ExtResource("3_w32yo")
+metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=1238152319]
 position = Vector2(0, 4)
@@ -19,9 +27,114 @@ collision_enabled = false
 [node name="Spikes" parent="." unique_id=1481858940 instance=ExtResource("2_pmfem")]
 position = Vector2(216, 120)
 
-[node name="Spikes2" parent="." unique_id=1528707931 instance=ExtResource("2_pmfem")]
+[node name="SpikesInv" parent="." unique_id=1528707931 instance=ExtResource("2_pmfem")]
 position = Vector2(328, 128)
 
-[node name="Invisibility" type="Node" parent="Spikes2" unique_id=616603096]
+[node name="Invisibility" type="Node" parent="SpikesInv" unique_id=616603096]
+script = ExtResource("3_w32yo")
+metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
+
+[node name="SpikesInv" parent="SpikesInv" unique_id=1033748364 instance=ExtResource("2_pmfem")]
+position = Vector2(136, 0)
+
+[node name="Invisibility" type="Node" parent="SpikesInv/SpikesInv" unique_id=1310995429]
+script = ExtResource("3_w32yo")
+metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
+
+[node name="SpikesInv2" parent="." unique_id=1829985238 instance=ExtResource("2_pmfem")]
+position = Vector2(512, 128)
+
+[node name="Invisibility" type="Node" parent="SpikesInv2" unique_id=1254151020]
+script = ExtResource("3_w32yo")
+metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
+
+[node name="SpikesInv3" parent="." unique_id=1442390570 instance=ExtResource("2_pmfem")]
+position = Vector2(496, 128)
+
+[node name="Invisibility" type="Node" parent="SpikesInv3" unique_id=397307925]
+script = ExtResource("3_w32yo")
+metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
+
+[node name="SpikesInv4" parent="." unique_id=451199743 instance=ExtResource("2_pmfem")]
+position = Vector2(480, 128)
+
+[node name="Invisibility" type="Node" parent="SpikesInv4" unique_id=104089584]
+script = ExtResource("3_w32yo")
+metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
+
+[node name="SpikesInv5" parent="." unique_id=105372743 instance=ExtResource("2_pmfem")]
+position = Vector2(728, 128)
+
+[node name="Invisibility" type="Node" parent="SpikesInv5" unique_id=598755872]
+script = ExtResource("3_w32yo")
+metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
+
+[node name="SpikesInv6" parent="." unique_id=909559154 instance=ExtResource("2_pmfem")]
+position = Vector2(712, 128)
+
+[node name="Invisibility" type="Node" parent="SpikesInv6" unique_id=1058557018]
+script = ExtResource("3_w32yo")
+metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
+
+[node name="SpikesInv7" parent="." unique_id=1569289073 instance=ExtResource("2_pmfem")]
+position = Vector2(696, 128)
+
+[node name="Invisibility" type="Node" parent="SpikesInv7" unique_id=508801101]
+script = ExtResource("3_w32yo")
+metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
+
+[node name="SpikesInv8" parent="." unique_id=2066494830 instance=ExtResource("2_pmfem")]
+position = Vector2(1480, 128)
+
+[node name="Invisibility" type="Node" parent="SpikesInv8" unique_id=2133789019]
+script = ExtResource("3_w32yo")
+metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
+
+[node name="SpikesInv9" parent="." unique_id=770380643 instance=ExtResource("2_pmfem")]
+position = Vector2(1320, 120)
+
+[node name="Invisibility" type="Node" parent="SpikesInv9" unique_id=1210054284]
+script = ExtResource("3_w32yo")
+metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
+
+[node name="SpikesInv10" parent="." unique_id=1000179013 instance=ExtResource("2_pmfem")]
+position = Vector2(1544, 128)
+
+[node name="Invisibility" type="Node" parent="SpikesInv10" unique_id=2001461800]
+script = ExtResource("3_w32yo")
+metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
+
+[node name="SpikesInv11" parent="." unique_id=1706555810 instance=ExtResource("2_pmfem")]
+position = Vector2(1384, 120)
+
+[node name="Invisibility" type="Node" parent="SpikesInv11" unique_id=997107702]
+script = ExtResource("3_w32yo")
+metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
+
+[node name="SpikesInv12" parent="." unique_id=2065372230 instance=ExtResource("2_pmfem")]
+position = Vector2(2584, 112)
+
+[node name="Invisibility" type="Node" parent="SpikesInv12" unique_id=1632791420]
+script = ExtResource("3_w32yo")
+metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
+
+[node name="SpikesInv13" parent="." unique_id=487691844 instance=ExtResource("2_pmfem")]
+position = Vector2(2728, 104)
+
+[node name="Invisibility" type="Node" parent="SpikesInv13" unique_id=1388992788]
+script = ExtResource("3_w32yo")
+metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
+
+[node name="SpikesInv14" parent="." unique_id=1484048089 instance=ExtResource("2_pmfem")]
+position = Vector2(2680, 112)
+
+[node name="Invisibility" type="Node" parent="SpikesInv14" unique_id=1245415288]
+script = ExtResource("3_w32yo")
+metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
+
+[node name="SpikesInv15" parent="." unique_id=1637468684 instance=ExtResource("2_pmfem")]
+position = Vector2(2632, 104)
+
+[node name="Invisibility" type="Node" parent="SpikesInv15" unique_id=1098791616]
 script = ExtResource("3_w32yo")
 metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
