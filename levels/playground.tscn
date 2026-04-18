@@ -1,0 +1,27 @@
+[gd_scene format=4 uid="uid://ct7gj0bps1iv3"]
+
+[ext_resource type="TileSet" uid="uid://dxc60ea2wixq2" path="res://tilesets/ground.tres" id="1_jcyrx"]
+[ext_resource type="Texture2D" uid="uid://dqlmreqfjsh7x" path="res://tilemap.png" id="2_qxjbg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcyx1"]
+atlas = ExtResource("2_qxjbg")
+region = Rect2(174, 115, 12, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ek3o3"]
+size = Vector2(12, 17)
+
+[node name="Playground" type="Node2D" unique_id=211304220]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=311607558]
+tile_map_data = PackedByteArray("AAABAAcAAAACAAEAAAACAAcAAAAAAAEAAAADAAcAAAADAAAAAAAEAAcAAAADAAEAAAAFAAcAAAABAAEAAAAGAAcAAAAAAAEAAAAHAAcAAAAAAAEAAAAIAAcAAAABAAEAAAAJAAcAAAACAAEAAAAKAAcAAAABAAAAAAALAAcAAAACAAEAAAAMAAcAAAAAAAAAAAANAAcAAAADAAAAAAAOAAcAAAABAAEAAAAPAAcAAAABAAAAAAAQAAcAAAABAAEAAAARAAcAAAADAAEAAAA=")
+tile_set = ExtResource("1_jcyrx")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=963716856]
+position = Vector2(112, 88)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=2040912768]
+texture = SubResource("AtlasTexture_wcyx1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=702944601]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ek3o3")
