@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cye1ysqxsbcxa" path="res://scripts/player.gd" id="1_ykyjo"]
 [ext_resource type="Texture2D" uid="uid://dnnmy42ccarbc" path="res://alienGreen.png" id="2_ykyjo"]
+[ext_resource type="PackedScene" uid="uid://d0aaxhajvply8" path="res://objects/signaler.tscn" id="3_nmc1l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ykyjo"]
 size = Vector2(10, 14)
@@ -15,3 +16,6 @@ texture = ExtResource("2_ykyjo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=478012747]
 shape = SubResource("RectangleShape2D_ykyjo")
+
+[node name="Signaler" parent="." unique_id=1239735612 instance=ExtResource("3_nmc1l")]
+unique_name_in_owner = true

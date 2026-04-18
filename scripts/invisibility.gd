@@ -1,13 +1,16 @@
 class_name Invisibility
-extends Node2D
+extends Node
 
-@export var time_visible: float = 3
+var parent: Node2D
 
-func _enter_tree() -> void:
-	Signaler.make_visible.connect(make_visible)
-	visible = false
+func _ready() -> void:
+	parent = get_parent()
+	parent.modulate.a = 0
+
 
 func make_visible() -> void:
-	visible = true
-	await get_tree().create_timer(time_visible).timeout
-	visible = false
+	parent.modulate.a = 1
+
+
+func make_invisible() -> void:
+	create_tween().tween_property(parent, "modulate:a", 0, 0.25)

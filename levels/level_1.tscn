@@ -17,37 +17,73 @@ tile_map_data = PackedByteArray("AAAJAAcAAAAGAAYAAAAOAAcAAAAGAAYAAAATAAcAAAAGAAY
 tile_set = ExtResource("1_vn7o3")
 collision_enabled = false
 
-[node name="Invisibility" type="Node2D" parent="." unique_id=944857073]
-script = ExtResource("3_bt44k")
-time_visible = 2.0
-
-[node name="TileMapLayer" type="TileMapLayer" parent="Invisibility" unique_id=2079946174]
+[node name="InvisibleTiles" type="TileMapLayer" parent="." unique_id=2079946174]
 tile_map_data = PackedByteArray("AAAnAAYAAAAAAAAAAAAoAAYAAAAAAAAAAAAmAAYAAAAAAAAAAAB8AAMAAAADAAAAAAB9AAMAAAADAAAAAACBAAMAAAADAAEAAACCAAMAAAADAAEAAACDAAMAAAACAAAAAACIAAMAAAACAAAAAACKAAMAAAADAAAAAACMAAMAAAABAAAAAACOAAMAAAAAAAEAAACQAAMAAAACAAAAAACSAAMAAAACAAAAAACWAAMAAAABAAEAAACXAAMAAAADAAEAAACYAAMAAAACAAAAAAA=")
 tile_set = ExtResource("1_vn7o3")
 
-[node name="Spikes" parent="Invisibility" unique_id=1481858940 instance=ExtResource("2_jirdo")]
+[node name="Invisibility" type="Node" parent="InvisibleTiles" unique_id=1767523751]
+script = ExtResource("3_bt44k")
+metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
+
+[node name="Spikes" parent="." unique_id=1481858940 instance=ExtResource("2_jirdo")]
 position = Vector2(168, 105)
 
-[node name="Spikes2" parent="Invisibility" unique_id=1624515623 instance=ExtResource("2_jirdo")]
+[node name="Invisibility" type="Node" parent="Spikes" unique_id=1493300266]
+script = ExtResource("3_bt44k")
+metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
+
+[node name="Spikes2" parent="." unique_id=1624515623 instance=ExtResource("2_jirdo")]
 position = Vector2(1475, 200)
 
-[node name="Spikes3" parent="Invisibility" unique_id=2123355713 instance=ExtResource("2_jirdo")]
+[node name="Invisibility" type="Node" parent="Spikes2" unique_id=1331596386]
+script = ExtResource("3_bt44k")
+metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
+
+[node name="Spikes3" parent="." unique_id=2123355713 instance=ExtResource("2_jirdo")]
 position = Vector2(1296, 200)
 
-[node name="Spikes4" parent="Invisibility" unique_id=1062971853 instance=ExtResource("2_jirdo")]
+[node name="Invisibility" type="Node" parent="Spikes3" unique_id=663109745]
+script = ExtResource("3_bt44k")
+metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
+
+[node name="Spikes4" parent="." unique_id=1062971853 instance=ExtResource("2_jirdo")]
 position = Vector2(1392, 200)
 
-[node name="Spikes5" parent="Invisibility" unique_id=824486707 instance=ExtResource("2_jirdo")]
+[node name="Invisibility" type="Node" parent="Spikes4" unique_id=632706394]
+script = ExtResource("3_bt44k")
+metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
+
+[node name="Spikes5" parent="." unique_id=824486707 instance=ExtResource("2_jirdo")]
 position = Vector2(1312, 200)
 
-[node name="Spikes6" parent="Invisibility" unique_id=1757344097 instance=ExtResource("2_jirdo")]
+[node name="Invisibility" type="Node" parent="Spikes5" unique_id=1817927853]
+script = ExtResource("3_bt44k")
+metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
+
+[node name="Spikes6" parent="." unique_id=1757344097 instance=ExtResource("2_jirdo")]
 position = Vector2(1328, 200)
 
-[node name="Spikes7" parent="Invisibility" unique_id=1807589476 instance=ExtResource("2_jirdo")]
+[node name="Invisibility" type="Node" parent="Spikes6" unique_id=452253262]
+script = ExtResource("3_bt44k")
+metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
+
+[node name="Spikes7" parent="." unique_id=1807589476 instance=ExtResource("2_jirdo")]
 position = Vector2(1376, 200)
 
-[node name="Spikes8" parent="Invisibility" unique_id=1579376280 instance=ExtResource("2_jirdo")]
+[node name="Invisibility" type="Node" parent="Spikes7" unique_id=1534275041]
+script = ExtResource("3_bt44k")
+metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
+
+[node name="Spikes8" parent="." unique_id=1579376280 instance=ExtResource("2_jirdo")]
 position = Vector2(1576, 136)
 
-[node name="Spikes9" parent="Invisibility" unique_id=2112393628 instance=ExtResource("2_jirdo")]
+[node name="Invisibility" type="Node" parent="Spikes8" unique_id=227393686]
+script = ExtResource("3_bt44k")
+metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
+
+[node name="Spikes9" parent="." unique_id=2112393628 instance=ExtResource("2_jirdo")]
 position = Vector2(1544, 160)
+
+[node name="Invisibility" type="Node" parent="Spikes9" unique_id=505615352]
+script = ExtResource("3_bt44k")
+metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"

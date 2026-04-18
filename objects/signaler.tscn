@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://d0aaxhajvply8"]
+
+[ext_resource type="Script" uid="uid://blyvrinx25bup" path="res://scripts/signaler.gd" id="1_c0ac1"]
+[ext_resource type="Shader" uid="uid://bdochuljcbvrj" path="res://pulse_shader.gdshader" id="2_emrue"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ykyjo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wpeyg"]
+shader = ExtResource("2_emrue")
+shader_parameter/width = 0.01
+shader_parameter/color = Color(1, 1, 1, 0.3254902)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_c0ac1"]
+size = Vector2(4, 4)
+
+[node name="Signaler" type="Area2D" unique_id=1239735612]
+script = ExtResource("1_c0ac1")
+
+[node name="SignalHitbox" type="CollisionShape2D" parent="." unique_id=659031340]
+unique_name_in_owner = true
+shape = SubResource("CircleShape2D_ykyjo")
+debug_color = Color(0, 0.6, 0, 0.41960785)
+
+[node name="PulseSprite" type="Sprite2D" parent="." unique_id=2042846935]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_wpeyg")
+scale = Vector2(2, 2)
+texture = SubResource("PlaceholderTexture2D_c0ac1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -5,15 +5,18 @@ extends CharacterBody2D
 @export var move_speed: float = 300
 @export var jump_strength: float = 400
 
+@export var signal_settings: SignalerSettings
+
 var start_position: Vector2
 
 func _ready() -> void:
 	start_position = position
-
+	%Signaler.settings = signal_settings
+	
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("use_signaler"):
-		Signaler.make_visible.emit()
+		%Signaler.make_signal()
 
 
 func _physics_process(_delta: float) -> void:
@@ -45,7 +48,7 @@ func move() -> void:
 	var horizontal = Input.get_axis("move_left", "move_right")
 	velocity.x = horizontal * move_speed
 	
-
+	
 func take_damage() -> void:
 	# TODO: Teleport to last checkpoint here	
-	pass	
+	pass
