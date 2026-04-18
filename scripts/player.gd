@@ -5,6 +5,12 @@ extends CharacterBody2D
 @export var move_speed: float = 300
 @export var jump_strength: float = 400
 
+var start_position: Vector2
+
+func _ready() -> void:
+	start_position = position
+
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("use_signaler"):
 		Signaler.make_visible.emit()
@@ -20,6 +26,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey:
 		if event.keycode == KEY_ESCAPE:
 			get_tree().quit()
+		if event.keycode == KEY_R:
+			position = start_position
+			velocity = Vector2.ZERO
 
 
 func apply_gravity() -> void:
