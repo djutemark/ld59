@@ -1,19 +1,16 @@
 [gd_scene format=3 uid="uid://cuv07vgb0u6t4"]
 
-[ext_resource type="PackedScene" uid="uid://dt7ygoxqoqkbj" path="res://levels/level_1.tscn" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://bmimicae0in6j" path="res://objects/player.tscn" id="2_e2o6t"]
-[ext_resource type="Script" uid="uid://lhcg5fvks6eg" path="res://scripts/signal_settings.gd" id="3_fc0e3"]
+[ext_resource type="Script" path="res://scripts/signal_settings.gd" id="3_fc0e3"]
 [ext_resource type="Script" uid="uid://dvloye4naumf2" path="res://scripts/player_camera.gd" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://d225k0aypbqlp" path="res://levels/world.tscn" id="4_fc0e3"]
 
 [sub_resource type="Resource" id="Resource_7jktm"]
 script = ExtResource("3_fc0e3")
-grow_duration = 0.5
+grow_duration = 5.0
 growth_type = 4
-metadata/_custom_type_script = "uid://lhcg5fvks6eg"
 
 [node name="Game" type="Node2D" unique_id=2094557731]
-
-[node name="Level 1" parent="." unique_id=1630807923 instance=ExtResource("1_80nbo")]
 
 [node name="Player" parent="." unique_id=56246929 instance=ExtResource("2_e2o6t")]
 position = Vector2(87, 105)
@@ -26,3 +23,5 @@ signal_settings = SubResource("Resource_7jktm")
 offset = Vector2(0, -30)
 script = ExtResource("3_feb5d")
 player = NodePath("../Player")
+
+[node name="World" parent="." unique_id=1989093615 instance=ExtResource("4_fc0e3")]
