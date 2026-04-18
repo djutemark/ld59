@@ -10,6 +10,8 @@ extends CharacterBody2D
 var original_position: Vector2
 var current_checkpoint: Checkpoint = null
 
+var collected_keys: int = 0
+
 var respawn_position:
 	get: return current_checkpoint.position if current_checkpoint != null else original_position
 
@@ -68,3 +70,7 @@ func respawn() -> void:
 	
 func take_damage() -> void:
 	respawn()
+
+
+func take_key(key: Key.KeyType) -> void:
+	collected_keys |= key

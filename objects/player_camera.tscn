@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dg0nnerfblqmk"]
+
+[ext_resource type="Script" uid="uid://dvloye4naumf2" path="res://scripts/player_camera.gd" id="1_x05jn"]
+
+[node name="PlayerCamera" type="Camera2D" unique_id=952461710 node_paths=PackedStringArray("player")]
+offset = Vector2(0, -30)
+script = ExtResource("1_x05jn")
+player = NodePath("")

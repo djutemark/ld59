@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bpd0gu4eyp8b1"]
+
+[ext_resource type="Script" uid="uid://viymgc88g3ul" path="res://scripts/keyhole.gd" id="1_btw88"]
+[ext_resource type="Texture2D" uid="uid://b7swtng3asa25" path="res://monochrome_tilemap_transparent.png" id="2_ksbm3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ax0xp"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7xqd"]
+atlas = ExtResource("2_ksbm3")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k865y"]
+atlas = SubResource("AtlasTexture_i7xqd")
+region = Rect2(153, 323, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ax0xp"]
+atlas = ExtResource("2_ksbm3")
+region = Rect2(170, 323, 16, 16)
+
+[node name="Keyhole" type="Area2D" unique_id=1455977793]
+script = ExtResource("1_btw88")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=90775316]
+shape = SubResource("RectangleShape2D_ax0xp")
+
+[node name="Locked" type="Sprite2D" parent="." unique_id=1698594336]
+unique_name_in_owner = true
+texture = SubResource("AtlasTexture_k865y")
+
+[node name="Unlocked" type="Sprite2D" parent="." unique_id=2146525492]
+unique_name_in_owner = true
+texture = SubResource("AtlasTexture_ax0xp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
