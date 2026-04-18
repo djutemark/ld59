@@ -15,6 +15,10 @@ run/main_scene="uid://cuv07vgb0u6t4"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+HUD="*uid://2om16o6x7jah"
+
 [display]
 
 window/size/viewport_width=360
@@ -26,6 +30,10 @@ window/stretch/mode="viewport"
 [dotnet]
 
 project/assembly_name="LD59"
+
+[gui]
+
+theme/custom_font="res://fonts/PixelifySans-VariableFont_wght.ttf"
 
 [input]
 

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://2om16o6x7jah"]
+
+[ext_resource type="Script" uid="uid://bs38usivmy2am" path="res://scripts/hud.gd" id="1_64ctp"]
+[ext_resource type="FontFile" uid="uid://1t52y13lu4i1" path="res://fonts/PixelifySans-VariableFont_wght.ttf" id="2_8sq4i"]
+
+[sub_resource type="Theme" id="Theme_ryrav"]
+default_font = ExtResource("2_8sq4i")
+default_font_size = 14
+
+[node name="HUD" type="CanvasLayer" unique_id=1372894820]
+script = ExtResource("1_64ctp")
+
+[node name="NumUses" type="Label" parent="." unique_id=1442157939]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 23.0
+theme = SubResource("Theme_ryrav")
+text = "Hello, World!"

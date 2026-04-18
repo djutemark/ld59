@@ -5,6 +5,7 @@ extends Area2D
 
 var is_active: bool = false
 var current_visible_invisibiles: Array[Invisibility] = []
+var num_uses: int = 0
 
 const RADIUS_SPRITE_RATIO = 0.5 # Very much a magic number
 
@@ -13,9 +14,11 @@ func _ready() -> void:
 
 
 func make_signal() -> void:
-	if is_active:
+	if is_active or num_uses >= settings.max_usage:
 		return
 	is_active = true
+	num_uses += 1
+	HUD.current_signal_uses = num_uses
 
 	var shape: CircleShape2D = %SignalHitbox.shape
 	if shape != null:
@@ -31,12 +34,16 @@ func make_signal() -> void:
 		await get_tree().create_timer(settings.time_at_max_growth).timeout
 		%SignalHitbox.disabled = true
 		%PulseSprite.scale = Vector2.ZERO
-
-		
+	
 		for invisibility in current_visible_invisibiles:
 			invisibility.make_invisible()
 		current_visible_invisibiles.clear()
 	is_active = false
+
+
+func reset_signals() -> void:
+	num_uses = 0
+	HUD.current_signal_uses = num_uses
 
 
 func _on_body_entered(body: Node2D) -> void:

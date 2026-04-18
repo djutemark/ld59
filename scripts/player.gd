@@ -16,12 +16,13 @@ var respawn_position:
 func _ready() -> void:
 	original_position = position
 	%Signaler.settings = signal_settings
+	HUD.max_signal_uses = signal_settings.max_usage
 	
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("use_signaler"):
 		%Signaler.make_signal()
-
+			
 
 func _physics_process(_delta: float) -> void:
 	apply_gravity()
@@ -62,6 +63,7 @@ func set_checkpoint(checkpoint: Checkpoint) -> void:
 func respawn() -> void:
 	position = respawn_position
 	velocity = Vector2.ZERO
+	%Signaler.reset_signals()
 
 	
 func take_damage() -> void:

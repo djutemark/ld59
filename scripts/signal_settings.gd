@@ -6,3 +6,4 @@ extends Resource
 @export var time_at_max_growth: float = 1
 @export var cooldown: float = 2
 @export var growth_type: Tween.TransitionType = Tween.TRANS_CUBIC
+@export var max_usage: int = 3
