@@ -46,6 +46,6 @@ func move() -> void:
 	velocity.x = horizontal * move_speed
 	
 
-func take_damage(amount: float) -> void:
-	print("taking %s damage" % amount)
-	
+func take_damage() -> void:
+	# TODO: Teleport to last checkpoint here	
+	pass	
