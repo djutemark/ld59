@@ -23,6 +23,7 @@ func make_signal() -> void:
 	var shape: CircleShape2D = %SignalHitbox.shape
 	if shape != null:
 		Audio.play(Audio.Sound.SignalPulse)
+		Stats.total_num_signals_made += 1
 		%PulseSprite.scale = Vector2.ZERO
 		%SignalHitbox.disabled = false
 		shape.radius = 0

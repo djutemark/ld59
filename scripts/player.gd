@@ -65,6 +65,7 @@ func do_jump(dir: Vector2) -> void:
 	do_jump_called = true
 	velocity = dir
 	Audio.play(Audio.Sound.Jump)
+	Stats.total_num_jumps += 1
 
 
 func reset_air_jumps() -> void:
