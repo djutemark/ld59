@@ -1,8 +1,7 @@
 class_name Checkpoint
 extends Area2D
 
-@export var dehighlight_alpha: float = 0.25
-@export var highlight_alpha: float = 0.8
+@export var active_color: Color = Color.WEB_GREEN
 
 func _ready() -> void:
 	dehighlight()
@@ -13,9 +12,14 @@ func _on_body_entered(body: Node2D) -> void:
 		body.set_checkpoint(self)
 
 
+func _set_flag_color(color: Color) -> void:
+	%Flag.modulate = color
+	%Flag2.modulate = color
+
+
 func highlight() -> void:
-	modulate.a = highlight_alpha
+	_set_flag_color(active_color)
 
 
 func dehighlight() -> void:
-	modulate.a = dehighlight_alpha
+	_set_flag_color(Color.WHITE)

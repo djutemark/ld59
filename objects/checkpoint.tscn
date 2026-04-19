@@ -1,10 +1,21 @@
 [gd_scene format=3 uid="uid://bb6dvmw14lk3l"]
 
-[ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="1_bd582"]
 [ext_resource type="Script" uid="uid://baq6ft7npj5gk" path="res://scripts/checkpoint.gd" id="1_t1bj6"]
+[ext_resource type="Texture2D" uid="uid://b7swtng3asa25" path="res://monochrome_tilemap_transparent.png" id="2_t1bj6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1bj6"]
 size = Vector2(20, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md0ld"]
+atlas = ExtResource("2_t1bj6")
+region = Rect2(51, 160, 16, 8)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tctsx"]
+load_path = "res://.godot/imported/monochrome_tilemap_transparent.png-41031fa250e250a6da73ef9456d8ce51.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbg4i"]
+atlas = SubResource("CompressedTexture2D_tctsx")
+region = Rect2(74, 170, 4, 16)
 
 [node name="Checkpoint" type="Area2D" unique_id=764002079]
 script = ExtResource("1_t1bj6")
@@ -12,10 +23,31 @@ script = ExtResource("1_t1bj6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1732875763]
 shape = SubResource("RectangleShape2D_t1bj6")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=115891009]
-modulate = Color(0, 1, 1, 1)
-position = Vector2(0, 1)
-scale = Vector2(0.15, 0.3)
-texture = ExtResource("1_bd582")
+[node name="Flag" type="Sprite2D" parent="." unique_id=1709729972]
+unique_name_in_owner = true
+modulate = Color(9.914935e-06, 0.7738233, 1.540184e-06, 1)
+position = Vector2(5.000001, -6)
+rotation = 1.5707964
+scale = Vector2(0.7, 1)
+texture = SubResource("AtlasTexture_md0ld")
+
+[node name="Flag2" type="Sprite2D" parent="." unique_id=1132042147]
+unique_name_in_owner = true
+modulate = Color(9.914935e-06, 0.7738233, 1.540184e-06, 1)
+position = Vector2(5.000001, -6)
+rotation = 1.5707964
+scale = Vector2(0.7, 1)
+texture = SubResource("AtlasTexture_md0ld")
+flip_h = true
+
+[node name="PoleLower" type="Sprite2D" parent="." unique_id=1732758280]
+position = Vector2(7.1525574e-07, 12)
+rotation = 3.1415927
+texture = SubResource("AtlasTexture_hbg4i")
+
+[node name="PoleUpper" type="Sprite2D" parent="." unique_id=219837635]
+position = Vector2(7.1525574e-07, -4)
+rotation = 3.1415927
+texture = SubResource("AtlasTexture_hbg4i")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

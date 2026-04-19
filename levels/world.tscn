@@ -387,10 +387,10 @@ script = ExtResource("3_w32yo")
 metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
 
 [node name="Checkpoint" parent="." unique_id=764002079 instance=ExtResource("5_i8ckm")]
-position = Vector2(1584, 112)
+position = Vector2(1584, 108)
 
 [node name="Checkpoint2" parent="." unique_id=1575002295 instance=ExtResource("5_i8ckm")]
-position = Vector2(-2232, -360)
+position = Vector2(-2232, -356)
 
 [node name="SpringsGroup" type="Node2D" parent="." unique_id=992547485]
 

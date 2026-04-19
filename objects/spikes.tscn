@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://b2xltvs64i35j"]
 
-[ext_resource type="Texture2D" uid="uid://dqlmreqfjsh7x" path="res://tilemap.png" id="2_f3r3t"]
 [ext_resource type="Script" uid="uid://bt1l8d2rwrdrb" path="res://scripts/killbox.gd" id="2_ymht5"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oovyk"]
+load_path = "res://.godot/imported/monochrome_tilemap_transparent.png-41031fa250e250a6da73ef9456d8ce51.ctex"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ymht5"]
-atlas = ExtResource("2_f3r3t")
-region = Rect2(152, 60, 18, 15)
+atlas = SubResource("CompressedTexture2D_oovyk")
+region = Rect2(51, 153, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_is3ju"]
 size = Vector2(13, 4.5)
@@ -16,6 +18,7 @@ size = Vector2(13, 5)
 [node name="Spikes" type="StaticBody2D" unique_id=1481858940]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1695284675]
+modulate = Color(1, 0.3977014, 0.3292555, 1)
 texture_filter = 1
 texture = SubResource("AtlasTexture_ymht5")
 
