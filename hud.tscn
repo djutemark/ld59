@@ -12,6 +12,13 @@ default_font_size = 14
 script = ExtResource("1_64ctp")
 gui_key = ExtResource("3_640wx")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=412325609]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.1
+offset_bottom = 2.0
+color = Color(0, 0, 0, 1)
+
 [node name="NumUses" type="Label" parent="." unique_id=1442157939]
 unique_name_in_owner = true
 offset_right = 40.0

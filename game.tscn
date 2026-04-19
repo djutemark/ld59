@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cuv07vgb0u6t4"]
 
 [ext_resource type="PackedScene" uid="uid://bmimicae0in6j" path="res://objects/player.tscn" id="2_e2o6t"]
-[ext_resource type="Script" path="res://scripts/signal_settings.gd" id="3_fc0e3"]
+[ext_resource type="Script" uid="uid://lhcg5fvks6eg" path="res://scripts/signal_settings.gd" id="3_fc0e3"]
 [ext_resource type="Script" uid="uid://dvloye4naumf2" path="res://scripts/player_camera.gd" id="3_feb5d"]
 [ext_resource type="PackedScene" uid="uid://d225k0aypbqlp" path="res://levels/world.tscn" id="4_fc0e3"]
 
@@ -26,5 +26,6 @@ player = NodePath("../Player")
 position = Vector2(25, 113)
 move_speed = 115.0
 jump_strength = 140.0
+max_num_air_jumps = 0
 air_jump_strength = 135.0
 signal_settings = SubResource("Resource_7jktm")
