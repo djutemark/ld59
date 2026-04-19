@@ -24,7 +24,7 @@ player = NodePath("../Player")
 
 [node name="Player" parent="." unique_id=56246929 instance=ExtResource("2_e2o6t")]
 position = Vector2(25, 113)
-gravity_strength = 5.0
 move_speed = 115.0
-jump_strength = 240.0
+jump_strength = 140.0
+air_jump_strength = 135.0
 signal_settings = SubResource("Resource_7jktm")
