@@ -1,27 +1,36 @@
 [gd_scene format=4 uid="uid://ct7gj0bps1iv3"]
 
-[ext_resource type="TileSet" uid="uid://dxc60ea2wixq2" path="res://tilesets/ground.tres" id="1_jcyrx"]
-[ext_resource type="Texture2D" uid="uid://dqlmreqfjsh7x" path="res://tilemap.png" id="2_qxjbg"]
+[ext_resource type="TileSet" uid="uid://cakacx3sxy8db" path="res://tilesets/bnw.tres" id="1_wcyx1"]
+[ext_resource type="PackedScene" uid="uid://b4mwv0s84pved" path="res://objects/key.tscn" id="2_1y5p2"]
+[ext_resource type="PackedScene" uid="uid://dg0nnerfblqmk" path="res://objects/player_camera.tscn" id="3_1y5p2"]
+[ext_resource type="PackedScene" uid="uid://bmimicae0in6j" path="res://objects/player.tscn" id="4_i7xqd"]
+[ext_resource type="Script" uid="uid://lhcg5fvks6eg" path="res://scripts/signal_settings.gd" id="5_ek3o3"]
+[ext_resource type="PackedScene" uid="uid://bpd0gu4eyp8b1" path="res://objects/keyhole.tscn" id="6_i7xqd"]
+[ext_resource type="Script" uid="uid://bk1rgvi3v0xe5" path="res://scripts/invisibility.gd" id="7_i7xqd"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wcyx1"]
-atlas = ExtResource("2_qxjbg")
-region = Rect2(174, 115, 12, 17)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ek3o3"]
-size = Vector2(12, 17)
+[sub_resource type="Resource" id="Resource_1y5p2"]
+script = ExtResource("5_ek3o3")
+metadata/_custom_type_script = "uid://lhcg5fvks6eg"
 
 [node name="Playground" type="Node2D" unique_id=211304220]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=311607558]
-tile_map_data = PackedByteArray("AAABAAcAAAACAAEAAAACAAcAAAAAAAEAAAADAAcAAAADAAAAAAAEAAcAAAADAAEAAAAFAAcAAAABAAEAAAAGAAcAAAAAAAEAAAAHAAcAAAAAAAEAAAAIAAcAAAABAAEAAAAJAAcAAAACAAEAAAAKAAcAAAABAAAAAAALAAcAAAACAAEAAAAMAAcAAAAAAAAAAAANAAcAAAADAAAAAAAOAAcAAAABAAEAAAAPAAcAAAABAAAAAAAQAAcAAAABAAEAAAARAAcAAAADAAEAAAA=")
-tile_set = ExtResource("1_jcyrx")
+tile_map_data = PackedByteArray("AAABAAcAAAAIAAQAAAACAAcAAAAIAAQAAAADAAcAAAAIAAQAAAAEAAcAAAAIAAQAAAAFAAcAAAAIAAQAAAAGAAcAAAAIAAQAAAAHAAcAAAAIAAQAAAAIAAcAAAAIAAQAAAAJAAcAAAAIAAQAAAAKAAcAAAAIAAQAAAALAAcAAAAIAAQAAAAMAAcAAAAIAAQAAAANAAcAAAAIAAQAAAAOAAcAAAAIAAQAAAAPAAcAAAAIAAQAAAAQAAcAAAAIAAQAAAARAAcAAAAIAAQAAAAAAAcAAAAIAAQAAAD//wcAAAAIAAQAAAD+/wcAAAAIAAQAAAA=")
+tile_set = ExtResource("1_wcyx1")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=963716856]
-position = Vector2(112, 88)
+[node name="Key" parent="." unique_id=335025462 instance=ExtResource("2_1y5p2")]
+position = Vector2(112, 109)
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=2040912768]
-texture = SubResource("AtlasTexture_wcyx1")
+[node name="Invisibility" type="Node" parent="Key" unique_id=963555026]
+script = ExtResource("7_i7xqd")
+metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=702944601]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_ek3o3")
+[node name="PlayerCamera" parent="." unique_id=952461710 node_paths=PackedStringArray("player") instance=ExtResource("3_1y5p2")]
+player = NodePath("../Player")
+
+[node name="Player" parent="." unique_id=56246929 instance=ExtResource("4_i7xqd")]
+position = Vector2(68, 94)
+signal_settings = SubResource("Resource_1y5p2")
+
+[node name="Keyhole" parent="." unique_id=1455977793 instance=ExtResource("6_i7xqd")]
+position = Vector2(0, 105)
