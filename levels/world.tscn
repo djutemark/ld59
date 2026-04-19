@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://cciqeuforgvul" path="res://scripts/double_jump_upgrade.gd" id="9_lmpr0"]
 [ext_resource type="Texture2D" uid="uid://b7swtng3asa25" path="res://monochrome_tilemap_transparent.png" id="10_re8x6"]
 [ext_resource type="Script" uid="uid://dpbbep7oy4f2g" path="res://scripts/trapdoor.gd" id="11_re8x6"]
+[ext_resource type="PackedScene" uid="uid://dde5stbfvp74i" path="res://objects/more_signals_upgrade.tscn" id="11_wqmfy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_legw5"]
 
@@ -657,6 +658,13 @@ theme_override_constants/line_spacing = -7
 theme_override_font_sizes/font_size = 12
 text = "Double
 Jump"
+
+[node name="MoreSignalsUpgrade" parent="." unique_id=1732808153 instance=ExtResource("11_wqmfy")]
+position = Vector2(-361, 120)
+
+[node name="MoreSignalsUpgrade2" parent="." unique_id=1912594427 instance=ExtResource("11_wqmfy")]
+position = Vector2(-2997, -617)
+num_extra_signals = 1
 
 [node name="Trapdoor" type="Area2D" parent="." unique_id=2118425170]
 position = Vector2(-104, 133.5)

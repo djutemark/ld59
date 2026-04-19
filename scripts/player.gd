@@ -7,7 +7,12 @@ extends CharacterBody2D
 @export var max_num_air_jumps: int = 1
 @export var air_jump_strength: float = 100
 
-@export var signal_settings: SignalerSettings
+@export var signal_settings: SignalerSettings:
+	get:
+		return signal_settings
+	set(value):
+		signal_settings = value
+		update_signaler_settings()
 
 var original_position: Vector2
 var current_checkpoint: Checkpoint = null
@@ -31,8 +36,7 @@ var respawn_position:
 
 func _ready() -> void:
 	original_position = position
-	%Signaler.settings = signal_settings
-	HUD.max_signal_uses = signal_settings.max_usage
+	update_signaler_settings()
 	
 	%WarningSprite.visible = false
 	warning_activated.connect(func(): 
@@ -59,6 +63,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_tree().quit()
 		if event.keycode == KEY_R:
 			respawn()
+
+
+func update_signaler_settings() -> void:
+	%Signaler.settings = signal_settings
 
 
 func do_jump(dir: Vector2) -> void:

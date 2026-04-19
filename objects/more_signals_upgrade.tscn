@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dde5stbfvp74i"]
+
+[ext_resource type="Script" uid="uid://2jpnlwo0acmb" path="res://scripts/more_signals_upgrade.gd" id="1_xn68v"]
+[ext_resource type="Texture2D" uid="uid://b7swtng3asa25" path="res://monochrome_tilemap_transparent.png" id="2_1ymd3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfe8t"]
+size = Vector2(10, 11.835474)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tu8ou"]
+atlas = ExtResource("2_1ymd3")
+region = Rect2(241, 68, 10, 12)
+
+[node name="MoreSignalsUpgrade" type="Area2D" unique_id=1732808153]
+script = ExtResource("1_xn68v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=469416765]
+position = Vector2(-0.39160156, -0.08226013)
+shape = SubResource("RectangleShape2D_yfe8t")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1053947995]
+modulate = Color(1.544997e-05, 0.9683928, 2.3102762e-06, 1)
+position = Vector2(-0.39160156, -0.1645279)
+texture = SubResource("AtlasTexture_tu8ou")
+
+[node name="Label" type="Label" parent="." unique_id=2138329954]
+offset_left = -16.0
+offset_top = -30.0
+offset_right = 22.0
+offset_bottom = -5.0
+theme_override_constants/line_spacing = -7
+theme_override_font_sizes/font_size = 12
+text = "More
+Signals"

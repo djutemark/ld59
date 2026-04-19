@@ -11,6 +11,8 @@ var current_signal_uses: int:
 		_update_uses_text()
 
 var max_signal_uses: int:
+	get:
+		return max_signal_uses
 	set(value):
 		max_signal_uses = value
 		_update_uses_text()

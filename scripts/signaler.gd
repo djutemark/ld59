@@ -1,7 +1,12 @@
 class_name Signaler
 extends Area2D
 
-@export var settings: SignalerSettings
+@export var settings: SignalerSettings:
+	get:
+		return settings
+	set(value):
+		settings = value
+		HUD.max_signal_uses = value.max_usage
 
 var is_active: bool = false
 var current_visible_invisibiles: Array[Invisibility] = []
