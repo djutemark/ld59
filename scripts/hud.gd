@@ -37,14 +37,17 @@ func _process(delta: float) -> void:
 
 
 static func seconds_to_display(total_seconds: float) -> String:
-	var full_seconds := (floor(total_seconds) as int) % 60
-	var minutes: int = floor(total_seconds) / 60
-	var hundredths := (floor(total_seconds * 100.0) as int) % 100
+	var floored_seconds := floor(total_seconds) as int
+	
+	@warning_ignore("integer_division")
+	var minutes := floored_seconds / 60
+	var full_seconds := (floored_seconds as int) % 60
+	var hundredths := floor(total_seconds * 100.0) as int % 100
 	return "%d:%02d.%02d" % [minutes, full_seconds, hundredths]
 
 
 func _update_uses_text() -> void:
-	%NumUses.text = "Signals: %d / %d" % [current_signal_uses, max_signal_uses]
+	%NumUses.text = "Signals: %d" % [max_signal_uses - current_signal_uses]
 
 func _add_keys_gui(keys: int) -> void:
 	print("keys_to_activate = ", to_bit_string(keys))

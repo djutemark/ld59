@@ -95,11 +95,22 @@ func set_checkpoint(checkpoint: Checkpoint) -> void:
 		current_checkpoint.dehighlight()
 	current_checkpoint = checkpoint
 	current_checkpoint.highlight()
+	reset_signals()
+	
+
+func unset_checkpoint() -> void:
+	if current_checkpoint != null:
+		current_checkpoint.dehighlight()
+	current_checkpoint = null
 
 	
 func respawn() -> void:
 	position = respawn_position
 	velocity = Vector2.ZERO
+	reset_signals()
+
+
+func reset_signals() -> void:
 	%Signaler.reset_signals()
 
 	
