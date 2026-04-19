@@ -1,15 +1,18 @@
 class_name Player
 extends CharacterBody2D
 
-@export var gravity_strength: float = 10
-@export var move_speed: float = 300
-@export var jump_strength: float = 400
+@export var gravity_strength: float = 5
+@export var move_speed: float = 100
+@export var jump_strength: float = 100
+@export var max_num_air_jumps: int = 1
 
 @export var signal_settings: SignalerSettings
 
 var original_position: Vector2
 var current_checkpoint: Checkpoint = null
 var num_warnings: int = 0
+
+var num_air_jumps: int = 0
 
 var collected_keys: int = 0
 
@@ -59,9 +62,21 @@ func apply_gravity() -> void:
 		velocity = Vector2.ZERO
 
 
+func do_jump(dir: Vector2) -> void:
+	velocity = dir
+
+
 func move() -> void:
-	if is_on_floor() and Input.is_action_pressed("jump"):
-		velocity = up_direction * jump_strength
+	if Input.is_action_just_pressed("jump"):
+		var jump_vec: Vector2 = up_direction * jump_strength
+
+		print("jumping: num_air = ", num_air_jumps, " max_air = ", max_num_air_jumps)		
+		if is_on_floor():
+			num_air_jumps = 0
+			do_jump(jump_vec)
+		elif num_air_jumps < max_num_air_jumps:
+			num_air_jumps += 1
+			do_jump(jump_vec)
 
 	var horizontal = Input.get_axis("move_left", "move_right")
 	velocity.x = horizontal * move_speed
