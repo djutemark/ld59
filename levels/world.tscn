@@ -7,8 +7,36 @@
 [ext_resource type="PackedScene" uid="uid://bb6dvmw14lk3l" path="res://objects/checkpoint.tscn" id="5_i8ckm"]
 [ext_resource type="PackedScene" uid="uid://cfbdvo4tpvrsk" path="res://objects/spring.tscn" id="6_i8ckm"]
 [ext_resource type="Script" uid="uid://uhlaavcrngwt" path="res://scripts/teleporter.gd" id="7_vons5"]
+[ext_resource type="Script" uid="uid://bt1l8d2rwrdrb" path="res://scripts/killbox.gd" id="8_legw5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_legw5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_687qm"]
+size = Vector2(2894, 151.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmpr0"]
+size = Vector2(738, 153.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_re8x6"]
+size = Vector2(673, 237.875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqmfy"]
+size = Vector2(687, 237.875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mla2a"]
+size = Vector2(673, 237.875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oxfhy"]
+size = Vector2(673, 237.875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54i5j"]
+size = Vector2(1542, 362.9375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrd2w"]
+size = Vector2(1492.5, 151.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_og45p"]
+size = Vector2(1703, 151.5)
 
 [node name="World" type="Node2D" unique_id=1989093615]
 
@@ -530,3 +558,52 @@ shape = SubResource("RectangleShape2D_legw5")
 
 [node name="TeleportationTarget" type="Node2D" parent="." unique_id=1743013792]
 position = Vector2(24, 88)
+
+[node name="Killbox" type="Area2D" parent="." unique_id=11334376]
+script = ExtResource("8_legw5")
+metadata/_custom_type_script = "uid://bt1l8d2rwrdrb"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killbox" unique_id=1026100329]
+position = Vector2(388, 272.25)
+shape = SubResource("RectangleShape2D_687qm")
+debug_color = Color(1, 0, 0, 0.14500001)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Killbox" unique_id=1394395002]
+position = Vector2(-1406, 183.125)
+shape = SubResource("RectangleShape2D_lmpr0")
+debug_color = Color(1, 0, 0, 0.14500001)
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Killbox" unique_id=1324382108]
+position = Vector2(-1999, 7.0625)
+shape = SubResource("RectangleShape2D_re8x6")
+debug_color = Color(1, 0, 0, 0.14500001)
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Killbox" unique_id=869503836]
+position = Vector2(-2573.5, -137)
+shape = SubResource("RectangleShape2D_wqmfy")
+debug_color = Color(1, 0, 0, 0.14500001)
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Killbox" unique_id=870330565]
+position = Vector2(-3162.5, -285)
+shape = SubResource("RectangleShape2D_mla2a")
+debug_color = Color(1, 0, 0, 0.14500001)
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Killbox" unique_id=240715117]
+position = Vector2(-3755, -457)
+shape = SubResource("RectangleShape2D_oxfhy")
+debug_color = Color(1, 0, 0, 0.14500001)
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Killbox" unique_id=1533051131]
+position = Vector2(-4659, -677.46875)
+shape = SubResource("RectangleShape2D_54i5j")
+debug_color = Color(1, 0, 0, 0.14500001)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Killbox" unique_id=1997911599]
+position = Vector2(3257.75, 271.25)
+shape = SubResource("RectangleShape2D_wrd2w")
+debug_color = Color(1, 0, 0, 0.14500001)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Killbox" unique_id=1757716721]
+position = Vector2(2185, 337)
+shape = SubResource("RectangleShape2D_og45p")
+debug_color = Color(1, 0, 0, 0.14500001)
