@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://xnu6v024vx1n"]
+
+[ext_resource type="Texture2D" uid="uid://b7swtng3asa25" path="res://monochrome_tilemap_transparent.png" id="1_d477i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_640wx"]
+atlas = ExtResource("1_d477i")
+region = Rect2(274, 72, 12, 8)
+
+[node name="GuiKey" type="TextureRect" unique_id=462239723]
+texture = SubResource("AtlasTexture_640wx")

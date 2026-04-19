@@ -37,7 +37,9 @@ func make_signal() -> void:
 		%PulseSprite.scale = Vector2.ZERO
 	
 		for invisibility in current_visible_invisibiles:
-			invisibility.make_invisible()
+			# We might already have removed the thihng to make invisible
+			if is_instance_valid(invisibility):
+				invisibility.make_invisible()
 		current_visible_invisibiles.clear()
 		
 		await get_tree().create_timer(settings.cooldown).timeout

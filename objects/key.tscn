@@ -13,7 +13,8 @@ size = Vector2(12, 8)
 [node name="Key" type="Area2D" unique_id=335025462]
 script = ExtResource("1_ex2ll")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2067010566]
+[node name="KeySprite" type="Sprite2D" parent="." unique_id=2067010566]
+unique_name_in_owner = true
 texture = SubResource("AtlasTexture_wcyx1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=882979004]

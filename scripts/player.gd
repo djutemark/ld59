@@ -16,7 +16,12 @@ var num_warnings: int = 0
 var num_air_jumps: int = 0
 var do_jump_called: bool = false
 
-var collected_keys: int = 0
+var collected_keys: int = 0:
+	get:
+		return collected_keys
+	set(value):
+		collected_keys = value
+		HUD.collected_keys = value
 
 signal warning_activated
 signal warning_deactivated

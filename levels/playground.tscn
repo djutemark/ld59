@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://lhcg5fvks6eg" path="res://scripts/signal_settings.gd" id="5_ek3o3"]
 [ext_resource type="PackedScene" uid="uid://bpd0gu4eyp8b1" path="res://objects/keyhole.tscn" id="6_i7xqd"]
 [ext_resource type="Script" uid="uid://bk1rgvi3v0xe5" path="res://scripts/invisibility.gd" id="7_i7xqd"]
+[ext_resource type="PackedScene" uid="uid://cfbdvo4tpvrsk" path="res://objects/spring.tscn" id="8_ax0xp"]
 
 [sub_resource type="Resource" id="Resource_1y5p2"]
 script = ExtResource("5_ek3o3")
@@ -25,6 +26,14 @@ position = Vector2(112, 109)
 script = ExtResource("7_i7xqd")
 metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
 
+[node name="Key2" parent="." unique_id=1256718290 instance=ExtResource("2_1y5p2")]
+position = Vector2(221, 109)
+key_type = 4
+
+[node name="Invisibility" type="Node" parent="Key2" unique_id=333183458]
+script = ExtResource("7_i7xqd")
+metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
+
 [node name="PlayerCamera" parent="." unique_id=952461710 node_paths=PackedStringArray("player") instance=ExtResource("3_1y5p2")]
 player = NodePath("../Player")
 
@@ -34,3 +43,10 @@ signal_settings = SubResource("Resource_1y5p2")
 
 [node name="Keyhole" parent="." unique_id=1455977793 instance=ExtResource("6_i7xqd")]
 position = Vector2(0, 105)
+required_key = 4
+
+[node name="Spring" parent="." unique_id=145645134 instance=ExtResource("8_ax0xp")]
+position = Vector2(182, 110)
+
+[node name="Spring2" parent="." unique_id=589645239 instance=ExtResource("8_ax0xp")]
+position = Vector2(151, 110)
