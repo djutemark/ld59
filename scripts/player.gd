@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var move_speed: float = 100
 @export var jump_strength: float = 100
 @export var max_num_air_jumps: int = 1
+@export var air_jump_strength: float = 100
 
 @export var signal_settings: SignalerSettings
 
@@ -68,15 +69,12 @@ func do_jump(dir: Vector2) -> void:
 
 func move() -> void:
 	if Input.is_action_just_pressed("jump"):
-		var jump_vec: Vector2 = up_direction * jump_strength
-
-		print("jumping: num_air = ", num_air_jumps, " max_air = ", max_num_air_jumps)		
 		if is_on_floor():
 			num_air_jumps = 0
-			do_jump(jump_vec)
+			do_jump(up_direction * jump_strength)
 		elif num_air_jumps < max_num_air_jumps:
 			num_air_jumps += 1
-			do_jump(jump_vec)
+			do_jump(up_direction * air_jump_strength)
 
 	var horizontal = Input.get_axis("move_left", "move_right")
 	velocity.x = horizontal * move_speed
