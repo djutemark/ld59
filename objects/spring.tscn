@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cfbdvo4tpvrsk"]
+
+[ext_resource type="Script" uid="uid://bu5nktww1lka5" path="res://scripts/spring.gd" id="1_vfg45"]
+[ext_resource type="Texture2D" uid="uid://b7swtng3asa25" path="res://monochrome_tilemap_transparent.png" id="2_14s6j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwtle"]
+atlas = ExtResource("2_14s6j")
+region = Rect2(51, 135, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_223gx"]
+size = Vector2(14, 7)
+
+[node name="Spring" type="Area2D" unique_id=145645134]
+script = ExtResource("1_vfg45")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1582987330]
+position = Vector2(0, -5)
+texture = SubResource("AtlasTexture_wwtle")
+
+[node name="JumpArea" type="CollisionShape2D" parent="." unique_id=1294789327]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_223gx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

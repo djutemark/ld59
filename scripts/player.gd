@@ -14,6 +14,7 @@ var current_checkpoint: Checkpoint = null
 var num_warnings: int = 0
 
 var num_air_jumps: int = 0
+var do_jump_called: bool = false
 
 var collected_keys: int = 0
 
@@ -43,8 +44,7 @@ func _input(event: InputEvent) -> void:
 			
 
 func _physics_process(_delta: float) -> void:
-	apply_gravity()
-	move()
+	update_velocity()
 	move_and_slide()
 
 
@@ -56,28 +56,33 @@ func _unhandled_input(event: InputEvent) -> void:
 			respawn()
 
 
-func apply_gravity() -> void:
-	if !is_on_floor():
-		velocity += gravity_strength * -up_direction
-	else:
-		num_air_jumps = 0
-		velocity = Vector2.ZERO
-
-
 func do_jump(dir: Vector2) -> void:
+	do_jump_called = true
 	velocity = dir
 
 
-func move() -> void:
-	if Input.is_action_just_pressed("jump"):
-		if is_on_floor():
+func reset_air_jumps() -> void:
+	num_air_jumps = 0
+	
+
+func update_velocity() -> void:
+	var is_jumping: bool = Input.is_action_just_pressed("jump")
+	
+	if is_on_floor() and do_jump_called == false:
+		velocity = Vector2.ZERO
+		reset_air_jumps()
+		
+		if is_jumping:
 			do_jump(up_direction * jump_strength)
-		elif num_air_jumps < max_num_air_jumps:
+	else:
+		if is_jumping and num_air_jumps < max_num_air_jumps:
 			num_air_jumps += 1
 			do_jump(up_direction * air_jump_strength)
+		velocity += gravity_strength * -up_direction
 
-	var horizontal = Input.get_axis("move_left", "move_right")
-	velocity.x = horizontal * move_speed
+	var horizontal_move = Input.get_axis("move_left", "move_right")
+	velocity.x = horizontal_move * move_speed
+	do_jump_called = false
 	
 	
 func set_checkpoint(checkpoint: Checkpoint) -> void:
