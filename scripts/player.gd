@@ -64,6 +64,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func do_jump(dir: Vector2) -> void:
 	do_jump_called = true
 	velocity = dir
+	Audio.play(Audio.Sound.Jump)
 
 
 func reset_air_jumps() -> void:

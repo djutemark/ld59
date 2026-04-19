@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://bk1rgvi3v0xe5" path="res://scripts/invisibility.gd" id="7_i7xqd"]
 [ext_resource type="PackedScene" uid="uid://cfbdvo4tpvrsk" path="res://objects/spring.tscn" id="8_ax0xp"]
 [ext_resource type="Script" uid="uid://uhlaavcrngwt" path="res://scripts/teleporter.gd" id="9_k865y"]
+[ext_resource type="Script" uid="uid://dqdgwiub4mvnn" path="res://scripts/key_trigger.gd" id="10_fxjhj"]
 
 [sub_resource type="Resource" id="Resource_1y5p2"]
 script = ExtResource("5_ek3o3")
@@ -65,3 +66,6 @@ metadata/_custom_type_script = "uid://uhlaavcrngwt"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teleporter" unique_id=1387435796]
 shape = SubResource("RectangleShape2D_k865y")
+
+[node name="KeyTrigger" type="Area2D" parent="." unique_id=711212282]
+script = ExtResource("10_fxjhj")

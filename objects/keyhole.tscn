@@ -17,8 +17,9 @@ region = Rect2(153, 323, 16, 16)
 atlas = ExtResource("2_ksbm3")
 region = Rect2(170, 323, 16, 16)
 
-[node name="Keyhole" type="Area2D" unique_id=1455977793]
+[node name="Chest" type="Area2D" unique_id=731955333]
 script = ExtResource("1_btw88")
+metadata/_custom_type_script = "uid://dqdgwiub4mvnn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=90775316]
 shape = SubResource("RectangleShape2D_ax0xp")

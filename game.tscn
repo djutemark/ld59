@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cuv07vgb0u6t4"]
 
+[ext_resource type="Script" uid="uid://d0v6bdbumx12q" path="res://scripts/game.gd" id="1_7jktm"]
 [ext_resource type="PackedScene" uid="uid://bmimicae0in6j" path="res://objects/player.tscn" id="2_e2o6t"]
 [ext_resource type="Script" uid="uid://lhcg5fvks6eg" path="res://scripts/signal_settings.gd" id="3_fc0e3"]
 [ext_resource type="Script" uid="uid://dvloye4naumf2" path="res://scripts/player_camera.gd" id="3_feb5d"]
@@ -14,6 +15,7 @@ growth_type = 5
 max_usage = 1000
 
 [node name="Game" type="Node2D" unique_id=2094557731]
+script = ExtResource("1_7jktm")
 
 [node name="PlayerCamera" type="Camera2D" parent="." unique_id=975741464 node_paths=PackedStringArray("player")]
 offset = Vector2(0, -30)

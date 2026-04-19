@@ -23,17 +23,13 @@ var collected_keys: int = 0:
 		_add_keys_gui(keys_to_activate)
 		collected_keys = value
 
-var _elapsed_seconds := 0.0
-
 static func to_bit_string(value: int) -> String:
 	return String.num_int64(value, 2)
 
 
-func _process(delta: float) -> void:
-	_elapsed_seconds += delta
-	var seconds_left := allowed_time_seconds - _elapsed_seconds
-	
-	%Timer.text = seconds_to_display(seconds_left)
+func _process(_delta: float) -> void:
+	var time_left: float = allowed_time_seconds - Stats.total_elapsed_time_seconds
+	%Timer.text = seconds_to_display(time_left)
 
 
 static func seconds_to_display(total_seconds: float) -> String:
@@ -50,7 +46,6 @@ func _update_uses_text() -> void:
 	%NumUses.text = "Signals: %d" % [max_signal_uses - current_signal_uses]
 
 func _add_keys_gui(keys: int) -> void:
-	print("keys_to_activate = ", to_bit_string(keys))
 	for i in range(3):
 		var bit = 1 << i
 		
