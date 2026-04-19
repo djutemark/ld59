@@ -60,6 +60,7 @@ func apply_gravity() -> void:
 	if !is_on_floor():
 		velocity += gravity_strength * -up_direction
 	else:
+		num_air_jumps = 0
 		velocity = Vector2.ZERO
 
 
@@ -70,7 +71,6 @@ func do_jump(dir: Vector2) -> void:
 func move() -> void:
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
-			num_air_jumps = 0
 			do_jump(up_direction * jump_strength)
 		elif num_air_jumps < max_num_air_jumps:
 			num_air_jumps += 1
