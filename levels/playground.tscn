@@ -8,10 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://bpd0gu4eyp8b1" path="res://objects/keyhole.tscn" id="6_i7xqd"]
 [ext_resource type="Script" uid="uid://bk1rgvi3v0xe5" path="res://scripts/invisibility.gd" id="7_i7xqd"]
 [ext_resource type="PackedScene" uid="uid://cfbdvo4tpvrsk" path="res://objects/spring.tscn" id="8_ax0xp"]
+[ext_resource type="Script" uid="uid://uhlaavcrngwt" path="res://scripts/teleporter.gd" id="9_k865y"]
 
 [sub_resource type="Resource" id="Resource_1y5p2"]
 script = ExtResource("5_ek3o3")
 metadata/_custom_type_script = "uid://lhcg5fvks6eg"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k865y"]
 
 [node name="Playground" type="Node2D" unique_id=211304220]
 
@@ -50,3 +53,15 @@ position = Vector2(182, 110)
 
 [node name="Spring2" parent="." unique_id=589645239 instance=ExtResource("8_ax0xp")]
 position = Vector2(151, 110)
+
+[node name="TeleportTarget" type="Node2D" parent="." unique_id=998720176]
+position = Vector2(68, 94)
+
+[node name="Teleporter" type="Area2D" parent="." unique_id=640684412 node_paths=PackedStringArray("teleport_target")]
+position = Vector2(257, 103)
+script = ExtResource("9_k865y")
+teleport_target = NodePath("../TeleportTarget")
+metadata/_custom_type_script = "uid://uhlaavcrngwt"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleporter" unique_id=1387435796]
+shape = SubResource("RectangleShape2D_k865y")
