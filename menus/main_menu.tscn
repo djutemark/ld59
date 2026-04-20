@@ -27,7 +27,7 @@ alignment = 1
 [node name="Title" type="Label" parent="VBoxContainer" unique_id=1846873549]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "Klasifabb's Adventure!"
+text = "Klasifabb's Adventure"
 horizontal_alignment = 1
 
 [node name="StartGameButton" type="Button" parent="VBoxContainer" unique_id=1482736720]
@@ -35,7 +35,7 @@ custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_ij7vn")
-text = "Start!"
+text = "Start"
 
 [node name="QuitGameButton" type="Button" parent="VBoxContainer" unique_id=1032900166]
 unique_name_in_owner = true
