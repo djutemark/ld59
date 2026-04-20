@@ -17,7 +17,8 @@ func _ready() -> void:
 
 
 func _on_body_entered(other: Node2D) -> void:
-	if other is Player:
-		var should_unlock: bool = (other.collected_keys & required_key) == required_key
+	var p := other as Player
+	if p:
+		var should_unlock: bool = (p.collected_keys & required_key) == required_key
 		if should_unlock:
 			unlock.emit()
