@@ -134,6 +134,7 @@ func reset_signals() -> void:
 
 	
 func take_damage() -> void:
+	Stats.total_num_deaths += 1
 	respawn()
 
 

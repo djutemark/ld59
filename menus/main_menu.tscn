@@ -1,30 +1,48 @@
 [gd_scene format=3 uid="uid://cp15ksbb6rtju"]
 
 [ext_resource type="Script" uid="uid://c6wljpsfmgos0" path="res://menus/main_menu.gd" id="1_8gy84"]
+[ext_resource type="Theme" uid="uid://ch2bji5k1auha" path="res://menus/menu_theme.tres" id="2_ij7vn"]
 
-[node name="MainMenu" type="HFlowContainer" unique_id=788982563]
+[node name="MainMenu" type="VBoxContainer" unique_id=789191557]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -88.0
-offset_top = -22.0
-offset_right = 88.0
-offset_bottom = 22.0
+offset_left = -132.0
+offset_top = -47.0
+offset_right = 132.0
+offset_bottom = 47.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/v_separation = 20
 alignment = 1
 script = ExtResource("1_8gy84")
 
-[node name="Title" type="Label" parent="." unique_id=1846873549]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2095239515]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=1846873549]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Klasifabb's Adventure!"
+horizontal_alignment = 1
 
-[node name="StartGameButton" type="Button" parent="." unique_id=1482736720]
+[node name="StartGameButton" type="Button" parent="VBoxContainer" unique_id=1482736720]
+custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
-text = "Start Game!"
+size_flags_horizontal = 4
+theme = ExtResource("2_ij7vn")
+text = "Start!"
 
-[connection signal="button_down" from="StartGameButton" to="." method="_on_start_game_button_button_down"]
+[node name="QuitGameButton" type="Button" parent="VBoxContainer" unique_id=1032900166]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Quit"
+
+[connection signal="button_down" from="VBoxContainer/StartGameButton" to="." method="_on_start_game_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/QuitGameButton" to="." method="_on_quit_game_button_button_down"]

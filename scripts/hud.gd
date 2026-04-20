@@ -2,7 +2,6 @@ class_name HUD
 extends CanvasLayer
 
 @export var gui_key: PackedScene
-@export var allowed_time_seconds: float = 60 * 10
 
 var current_signal_uses: int:
 	get:
@@ -31,8 +30,13 @@ static func to_bit_string(value: int) -> String:
 
 
 func _process(_delta: float) -> void:
-	var time_left: float = allowed_time_seconds - Stats.total_elapsed_time_seconds
+	var time_left: float = Stats.allowed_time_seconds - Stats.total_elapsed_time_seconds
 	%Timer.text = seconds_to_display(time_left)
+	
+	if time_left < 0:
+		# This is so unstructed lol!
+		Stats.is_tracking_elapsed_time = false
+		get_tree().change_scene_to_file("res://menus/game_over.tscn")
 
 
 static func seconds_to_display(total_seconds: float) -> String:

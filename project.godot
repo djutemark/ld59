@@ -34,6 +34,7 @@ project/assembly_name="LD59"
 
 [gui]
 
+theme/custom="uid://ch2bji5k1auha"
 theme/custom_font="res://fonts/PixelifySans-VariableFont_wght.ttf"
 
 [input]

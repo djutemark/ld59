@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bdl21ahrtbqrq"]
+
+[ext_resource type="Script" uid="uid://6s6ylnvl4iwn" path="res://menus/game_over.gd" id="1_v8xbx"]
+
+[node name="GameOver" type="MarginContainer" unique_id=1951138002]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+script = ExtResource("1_v8xbx")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=2118754996]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="GameOverLabel" type="Label" parent="HBoxContainer" unique_id=1300075683]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Game Over!"
+horizontal_alignment = 1
+
+[node name="StatsText" type="Label" parent="HBoxContainer" unique_id=1061506192]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "Game Over!"
+
+[node name="ToMainMenuButton" type="Button" parent="HBoxContainer" unique_id=197947808]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "To Main Menu"
+
+[connection signal="button_down" from="HBoxContainer/ToMainMenuButton" to="." method="_on_to_main_menu_button_down"]
