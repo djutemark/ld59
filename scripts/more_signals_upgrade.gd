@@ -7,7 +7,8 @@ func _ready() -> void:
 
 
 func _on_body_entered(other: Node2D):
-	if other is Player:
-		other.signal_settings.max_usage += num_extra_signals
-		other.update_signaler_settings()
+	var player = other as Player
+	if player:
+		player.signal_settings.max_usage += num_extra_signals
+		player.update_signaler()
 	queue_free()

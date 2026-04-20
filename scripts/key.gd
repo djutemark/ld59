@@ -30,11 +30,13 @@ func _ready() -> void:
 
 
 func _update_color():
+	@warning_ignore("unsafe_property_access")
 	%KeySprite.modulate = key_type_to_color(key_type)
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body is Player:
-		body.take_key(key_type)
+	var player := body as Player
+	if player:
+		player.take_key(key_type)
 		queue_free()
 	

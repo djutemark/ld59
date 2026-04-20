@@ -6,5 +6,6 @@ func _ready() -> void:
 
 
 func _on_body_entered(other: Node2D) -> void:
-	if other is Player:
-		other.take_damage()
+	var p := other as Player
+	if p:
+		p.take_damage()

@@ -8,8 +8,9 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body is Player:
-		body.set_checkpoint(self)
+	var p := body as Player
+	if p:
+		p.set_checkpoint(self)
 
 
 func _set_flag_color(color: Color) -> void:

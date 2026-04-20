@@ -57,7 +57,9 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("use_signaler"):
-		%Signaler.make_signal()
+		var signaler := %Signaler as Signaler
+		if signaler:
+			signaler.make_signal()
 			
 
 func _physics_process(_delta: float) -> void:
@@ -130,7 +132,9 @@ func respawn() -> void:
 
 
 func reset_signals() -> void:
-	%Signaler.reset_signals()
+	var s := %Signaler as Signaler
+	if s:
+		s.reset_signals()
 
 	
 func take_damage() -> void:

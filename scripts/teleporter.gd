@@ -9,7 +9,8 @@ func _ready() -> void:
 	
 
 func _on_body_entered(other: Node2D) -> void:
-	if other is Player:
-		other.unset_checkpoint()
-		other.respawn_position = teleport_target
-		other.respawn()
+	var p := other as Player
+	if p:
+		p.unset_checkpoint()
+		p.respawn_position = teleport_target
+		p.respawn()
