@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://d2ilfh4o6l3ac"]
+
+[ext_resource type="Script" uid="uid://cwroo7cwj1wp1" path="res://scripts/blinking_triangle.gd" id="1_fiu3w"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fiu3w"]
+load_path = "res://.godot/imported/monochrome_tilemap_transparent.png-41031fa250e250a6da73ef9456d8ce51.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mt3jr"]
+atlas = SubResource("CompressedTexture2D_fiu3w")
+region = Rect2(85, 153, 16, 16)
+
+[node name="BlinkingTriangle" type="Sprite2D" unique_id=863167923]
+texture = SubResource("AtlasTexture_mt3jr")
+script = ExtResource("1_fiu3w")
