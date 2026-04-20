@@ -179,6 +179,7 @@ func take_damage(type: DamageType) -> void:
 
 func take_key(key: Key.KeyType) -> void:
 	collected_keys |= key
+	Audio.play(Audio.Sound.Pickup)
 
 
 func _on_warning_entered(other: Node2D) -> void:

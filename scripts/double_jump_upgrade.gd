@@ -8,4 +8,5 @@ func _on_body_entered(other: Node2D):
 	var p := other as Player
 	if p:
 		p.max_num_air_jumps += 1
+		Audio.play(Audio.Sound.Pickup)
 	queue_free()

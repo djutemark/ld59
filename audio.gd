@@ -5,6 +5,7 @@ extends Node
 @export var signal_pulse: SoundCollection
 @export var respawn: AudioStream
 @export var out_of_bounds: AudioStream
+@export var pickup: AudioStream
 
 enum Sound {
 	Jump,
@@ -12,6 +13,7 @@ enum Sound {
 	Respawn,
 	OutOfBounds,
 	Walk,
+	Pickup,
 }
 # Returns either AudioStream OR SoundCollection
 func _sound_to_stream(sound: Sound) -> Variant:
@@ -20,6 +22,7 @@ func _sound_to_stream(sound: Sound) -> Variant:
 		Sound.SignalPulse: return signal_pulse
 		Sound.Respawn: return respawn
 		Sound.OutOfBounds: return out_of_bounds
+		Sound.Pickup: return pickup
 		_: return null
 
 

@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://b568ptarhy8od" path="res://sfx/forceField_000.ogg" id="5_5olcg"]
 [ext_resource type="AudioStream" uid="uid://8hb2om0cpe26" path="res://sfx/doorClose_002.ogg" id="6_pgqns"]
 [ext_resource type="AudioStream" uid="uid://bqpwukjkk4eg3" path="res://sfx/explosionCrunch_000.ogg" id="7_cqcg1"]
+[ext_resource type="AudioStream" uid="uid://bae3rpmt3gr78" path="res://sfx/laserRetro_000.ogg" id="9_5olcg"]
 
 [sub_resource type="Resource" id="Resource_5olcg"]
 script = ExtResource("3_0svpk")
@@ -21,3 +22,4 @@ jump = ExtResource("3_ybffx")
 signal_pulse = SubResource("Resource_5olcg")
 respawn = ExtResource("6_pgqns")
 out_of_bounds = ExtResource("7_cqcg1")
+pickup = ExtResource("9_5olcg")

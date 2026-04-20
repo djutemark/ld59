@@ -11,4 +11,5 @@ func _on_body_entered(other: Node2D):
 	if player:
 		player.signal_settings.max_usage += num_extra_signals
 		player.update_signaler()
+		Audio.play(Audio.Sound.Pickup)
 	queue_free()
