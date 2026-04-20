@@ -91,16 +91,7 @@ func _input(event: InputEvent) -> void:
 func _physics_process(_delta: float) -> void:
 	update_velocity()
 	move_and_slide()
-
-
-func _unhandled_input(event: InputEvent) -> void:
-	var key_event := event as InputEventKey
-	if key_event:
-		if key_event.keycode == KEY_ESCAPE:
-			get_tree().quit()
-		if key_event.keycode == KEY_R:
-			respawn(RespawnReason.Teleport)
-
+	
 
 func update_signaler() -> void:
 	@warning_ignore("unsafe_property_access")
