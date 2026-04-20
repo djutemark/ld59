@@ -26,6 +26,15 @@ func _sound_to_stream(sound: Sound) -> Variant:
 		_: return null
 
 
+func _sound_pitch(sound: Sound) -> float:
+	const PITCH_LOW: float = 0.75
+	const PITCH_HIGH: float = 1.5
+	match sound:
+		Sound.Jump: return randf_range(PITCH_LOW, PITCH_HIGH)
+		Sound.Walk: return randf_range(PITCH_LOW, PITCH_HIGH)
+		_: return 1.0
+
+
 func _ready() -> void:
 	if background != null:
 		var p := AudioStreamPlayer.new()
@@ -39,9 +48,7 @@ func play(sound: Sound) -> void:
 	print("playing sound with stream ", stream)
 	
 	if stream != null:
-		const PITCH_LOW: float = 0.75
-		const PITCH_HIGH: float = 1.5
-		var pitch := randf_range(PITCH_LOW, PITCH_HIGH)
+		var pitch := _sound_pitch(sound)
 
 		if stream is AudioStream:
 			@warning_ignore("unsafe_cast")
