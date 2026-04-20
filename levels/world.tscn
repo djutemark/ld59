@@ -604,6 +604,7 @@ position = Vector2(24, 88)
 
 [node name="Killbox" type="Area2D" parent="." unique_id=11334376]
 script = ExtResource("8_legw5")
+damage_type = 0
 metadata/_custom_type_script = "uid://bt1l8d2rwrdrb"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killbox" unique_id=1026100329]

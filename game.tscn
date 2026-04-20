@@ -28,7 +28,6 @@ player = NodePath("../Player")
 position = Vector2(25, 113)
 move_speed = 115.0
 jump_strength = 140.0
-max_num_air_jumps = 0
 air_jump_strength = 135.0
 signal_settings = SubResource("Resource_7jktm")
 hud = NodePath("../HUD")

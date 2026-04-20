@@ -21,6 +21,29 @@ extends CharacterBody2D
 		hud = value
 		update_signaler()
 
+@export var is_walking: bool = false:
+	get:
+		return is_walking
+	set(value):
+		if value != is_walking:
+			var wa := %WalkAudioPlayer as AudioStreamPlayer
+			if value:
+				wa.play()
+			else:
+				wa.stop()
+		
+		is_walking = value
+
+
+enum DamageType {
+	OutOfBounds,
+	Spikes,
+}
+enum RespawnReason {
+	Death,
+	Teleport,
+	OutOfBounds,
+}
 
 var original_position: Vector2
 var current_checkpoint: Checkpoint = null
@@ -76,7 +99,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if key_event.keycode == KEY_ESCAPE:
 			get_tree().quit()
 		if key_event.keycode == KEY_R:
-			respawn()
+			respawn(RespawnReason.Teleport)
 
 
 func update_signaler() -> void:
@@ -112,7 +135,8 @@ func update_velocity() -> void:
 			do_jump(up_direction * air_jump_strength)
 		velocity += gravity_strength * -up_direction
 
-	var horizontal_move = Input.get_axis("move_left", "move_right")
+	var horizontal_move := Input.get_axis("move_left", "move_right")	
+	is_walking = abs(horizontal_move) > 0 and is_on_floor()
 	velocity.x = horizontal_move * move_speed
 	do_jump_called = false
 	
@@ -131,10 +155,14 @@ func unset_checkpoint() -> void:
 	current_checkpoint = null
 
 	
-func respawn() -> void:
+func respawn(respawn_reason: RespawnReason) -> void:
 	position = respawn_position
 	velocity = Vector2.ZERO
 	reset_signals()
+	
+	match respawn_reason:
+		RespawnReason.OutOfBounds:Audio.play(Audio.Sound.OutOfBounds)
+		_: Audio.play(Audio.Sound.Respawn)
 
 
 func reset_signals() -> void:
@@ -143,9 +171,10 @@ func reset_signals() -> void:
 		s.reset_signals()
 
 	
-func take_damage() -> void:
+func take_damage(type: DamageType) -> void:
 	Stats.total_num_deaths += 1
-	respawn()
+
+	respawn(RespawnReason.Death if type == DamageType.Spikes else RespawnReason.OutOfBounds)
 
 
 func take_key(key: Key.KeyType) -> void:
