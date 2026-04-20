@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://bqpwukjkk4eg3" path="res://sfx/explosionCrunch_000.ogg" id="7_cqcg1"]
 [ext_resource type="AudioStream" uid="uid://bae3rpmt3gr78" path="res://sfx/laserRetro_000.ogg" id="9_5olcg"]
 [ext_resource type="AudioStream" uid="uid://dmvohufuqah7k" path="res://sfx/laserSmall_000.ogg" id="10_pgqns"]
+[ext_resource type="AudioStream" uid="uid://l0mdyh2tmwbq" path="res://sfx/slime_000.ogg" id="11_cqcg1"]
 
 [sub_resource type="Resource" id="Resource_5olcg"]
 script = ExtResource("3_0svpk")
@@ -25,3 +26,4 @@ respawn = ExtResource("6_pgqns")
 out_of_bounds = ExtResource("7_cqcg1")
 pickup = ExtResource("9_5olcg")
 checkpoint_activated = ExtResource("10_pgqns")
+game_start = ExtResource("11_cqcg1")

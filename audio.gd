@@ -7,6 +7,7 @@ extends Node
 @export var out_of_bounds: AudioStream
 @export var pickup: AudioStream
 @export var checkpoint_activated: AudioStream
+@export var game_start: AudioStream
 
 enum Sound {
 	Jump,
@@ -16,6 +17,7 @@ enum Sound {
 	Walk,
 	Pickup,
 	CheckpointActivated,
+	GameStart,
 }
 # Returns either AudioStream OR SoundCollection
 func _sound_to_stream(sound: Sound) -> Variant:
@@ -26,6 +28,7 @@ func _sound_to_stream(sound: Sound) -> Variant:
 		Sound.OutOfBounds: return out_of_bounds
 		Sound.Pickup: return pickup
 		Sound.CheckpointActivated: return checkpoint_activated
+		Sound.GameStart: return game_start
 		_: return null
 
 
