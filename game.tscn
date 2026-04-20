@@ -16,6 +16,7 @@ growth_type = 5
 max_usage = 10
 
 [node name="Game" type="Node2D" unique_id=2094557731]
+position = Vector2(3, 0)
 script = ExtResource("1_7jktm")
 
 [node name="PlayerCamera" type="Camera2D" parent="." unique_id=975741464 node_paths=PackedStringArray("player")]
@@ -30,10 +31,10 @@ position = Vector2(-117, -114)
 position = Vector2(-94, -25)
 move_speed = 115.0
 jump_strength = 140.0
-max_num_air_jumps = 0
 air_jump_strength = 135.0
 signal_settings = SubResource("Resource_7jktm")
 hud = NodePath("../HUD")
 
 [node name="HUD" parent="." unique_id=1372894820 instance=ExtResource("6_ryrav")]
 unique_name_in_owner = true
+visible = false
