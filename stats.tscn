@@ -4,3 +4,4 @@
 
 [node name="Stats" type="Node" unique_id=1630132044]
 script = ExtResource("1_qkx3n")
+allowed_time_seconds = 1200.0

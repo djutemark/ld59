@@ -27,7 +27,7 @@ player = NodePath("../Player")
 position = Vector2(-117, -114)
 
 [node name="Player" parent="." unique_id=56246929 node_paths=PackedStringArray("hud") instance=ExtResource("2_e2o6t")]
-position = Vector2(-93, -25)
+position = Vector2(-94, -25)
 move_speed = 115.0
 jump_strength = 140.0
 max_num_air_jumps = 0

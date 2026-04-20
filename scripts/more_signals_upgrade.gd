@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var num_extra_signals: int = 3
+@export var num_extra_signals: int = 10
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
