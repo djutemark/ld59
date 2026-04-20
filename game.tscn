@@ -13,10 +13,9 @@ max_radius = 221.0
 time_at_max_growth = 0.0
 cooldown = 0.33
 growth_type = 5
-max_usage = 30
+max_usage = 5
 
 [node name="Game" type="Node2D" unique_id=2094557731]
-position = Vector2(96, -99)
 script = ExtResource("1_7jktm")
 
 [node name="PlayerCamera" type="Camera2D" parent="." unique_id=975741464 node_paths=PackedStringArray("player")]
@@ -31,7 +30,7 @@ position = Vector2(-117, -114)
 position = Vector2(-93, -19)
 move_speed = 115.0
 jump_strength = 140.0
-max_num_air_jumps = 2
+max_num_air_jumps = 0
 air_jump_strength = 135.0
 signal_settings = SubResource("Resource_7jktm")
 hud = NodePath("../HUD")
