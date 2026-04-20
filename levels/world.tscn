@@ -180,7 +180,7 @@ script = ExtResource("3_w32yo")
 metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
 
 [node name="SpikesInv8" parent="InvisSpikesGroup" unique_id=2066494830 instance=ExtResource("2_pmfem")]
-position = Vector2(1480, 128)
+position = Vector2(1480, 126)
 
 [node name="Invisibility" type="Node" parent="InvisSpikesGroup/SpikesInv8" unique_id=2133789019]
 script = ExtResource("3_w32yo")
@@ -194,7 +194,7 @@ script = ExtResource("3_w32yo")
 metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
 
 [node name="SpikesInv10" parent="InvisSpikesGroup" unique_id=1000179013 instance=ExtResource("2_pmfem")]
-position = Vector2(1544, 128)
+position = Vector2(1544, 126)
 
 [node name="Invisibility" type="Node" parent="InvisSpikesGroup/SpikesInv10" unique_id=2001461800]
 script = ExtResource("3_w32yo")
@@ -208,7 +208,7 @@ script = ExtResource("3_w32yo")
 metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
 
 [node name="SpikesInv12" parent="InvisSpikesGroup" unique_id=2065372230 instance=ExtResource("2_pmfem")]
-position = Vector2(2632, 112)
+position = Vector2(2632, 110)
 
 [node name="Invisibility" type="Node" parent="InvisSpikesGroup/SpikesInv12" unique_id=1632791420]
 script = ExtResource("3_w32yo")
@@ -222,7 +222,7 @@ script = ExtResource("3_w32yo")
 metadata/_custom_type_script = "uid://bk1rgvi3v0xe5"
 
 [node name="SpikesInv14" parent="InvisSpikesGroup" unique_id=1484048089 instance=ExtResource("2_pmfem")]
-position = Vector2(2680, 112)
+position = Vector2(2680, 110)
 
 [node name="Invisibility" type="Node" parent="InvisSpikesGroup/SpikesInv14" unique_id=1245415288]
 script = ExtResource("3_w32yo")
