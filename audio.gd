@@ -30,11 +30,14 @@ func _sound_to_stream(sound: Sound) -> Variant:
 
 
 func _sound_pitch(sound: Sound) -> float:
-	const PITCH_LOW: float = 0.75
-	const PITCH_HIGH: float = 1.5
 	match sound:
-		Sound.Jump: return randf_range(PITCH_LOW, PITCH_HIGH)
-		Sound.Walk: return randf_range(PITCH_LOW, PITCH_HIGH)
+		Sound.Jump: return randf_range(0.5, 0.6)
+		Sound.Walk: return randf_range(0.75, 1.5)
+		_: return 1.0
+
+func _sound_volume(sound: Sound) -> float:
+	match sound:
+		Sound.Jump: return -6.0
 		_: return 1.0
 
 
@@ -51,20 +54,22 @@ func play(sound: Sound) -> void:
 	
 	if stream != null:
 		var pitch := _sound_pitch(sound)
+		var volume := _sound_volume(sound)
 
 		if stream is AudioStream:
 			@warning_ignore("unsafe_cast")
-			_create_and_play_stream(stream as AudioStream, pitch)
+			_create_and_play_stream(stream as AudioStream, pitch, volume)
 		elif stream is SoundCollection:
 			@warning_ignore("unsafe_cast")
 			for s in (stream as SoundCollection).sounds:
-				await _create_and_play_stream(s, pitch)
+				await _create_and_play_stream(s, pitch, volume)
 
 
-func _create_and_play_stream(stream: AudioStream, pitch: float = 1.0) -> void:
+func _create_and_play_stream(stream: AudioStream, pitch: float = 1.0, volume_db_offset: float = 1.0) -> void:
 	var p := AudioStreamPlayer.new()
 	p.stream = stream
 	p.pitch_scale = pitch
+	p.volume_db = volume_db_offset
 	p.finished.connect(p.queue_free)
 	add_child(p)
 	p.play()

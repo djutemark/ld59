@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bdl21ahrtbqrq"]
 
 [ext_resource type="Script" uid="uid://6s6ylnvl4iwn" path="res://menus/game_over.gd" id="1_v8xbx"]
+[ext_resource type="AudioStream" uid="uid://cg8j4mc7m182k" path="res://sfx/explosionCrunch_004.ogg" id="2_slp2k"]
+[ext_resource type="AudioStream" uid="uid://c61wjxtedkjpk" path="res://sfx/computerNoise_002.ogg" id="3_hl86a"]
 
 [node name="GameOver" type="MarginContainer" unique_id=1951138002]
 anchors_preset = 15
@@ -13,6 +15,8 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 script = ExtResource("1_v8xbx")
+game_lost_sound = ExtResource("2_slp2k")
+game_won_sound = ExtResource("3_hl86a")
 
 [node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=2118754996]
 layout_mode = 2

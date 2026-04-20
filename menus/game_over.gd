@@ -1,8 +1,15 @@
 extends Control
 
+@export var game_lost_sound: AudioStream
+@export var game_won_sound: AudioStream
+
+var player_did_win: bool
 
 func _ready() -> void:
+	player_did_win = Stats.total_elapsed_time_seconds < Stats.allowed_time_seconds
+
 	(%StatsText as Label).text = _build_stats_text()
+	Audio._create_and_play_stream(game_won_sound if player_did_win else game_lost_sound)
 
 
 func _on_to_main_menu_button_down() -> void:
@@ -12,7 +19,6 @@ func _on_to_main_menu_button_down() -> void:
 func _build_stats_text() -> String:
 	var text := PackedStringArray()
 
-	var player_did_win := Stats.total_elapsed_time_seconds < Stats.allowed_time_seconds
 	(%GameOverLabel as Label).text = "You won!" if player_did_win else "Game Over!"
 	
 	var game_result_text := ""
