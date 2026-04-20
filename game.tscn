@@ -13,7 +13,7 @@ max_radius = 221.0
 time_at_max_growth = 0.0
 cooldown = 0.33
 growth_type = 5
-max_usage = 5
+max_usage = 10
 
 [node name="Game" type="Node2D" unique_id=2094557731]
 script = ExtResource("1_7jktm")
