@@ -1639,7 +1639,6 @@ Jump"
 metadata/_edit_use_anchors_ = true
 
 [node name="MoreSignalsUpgrade" parent="." unique_id=1732808153 instance=ExtResource("11_wqmfy")]
-visible = false
 position = Vector2(-40, 24)
 
 [node name="MoreSignalsUpgrade2" parent="." unique_id=1912594427 instance=ExtResource("11_wqmfy")]
