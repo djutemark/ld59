@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d0v6bdbumx12q" path="res://scripts/game.gd" id="1_7jktm"]
 [ext_resource type="PackedScene" uid="uid://bmimicae0in6j" path="res://objects/player.tscn" id="2_e2o6t"]
-[ext_resource type="Script" uid="uid://lhcg5fvks6eg" path="res://scripts/signal_settings.gd" id="3_fc0e3"]
+[ext_resource type="Script" path="res://scripts/signal_settings.gd" id="3_fc0e3"]
 [ext_resource type="Script" uid="uid://dvloye4naumf2" path="res://scripts/player_camera.gd" id="3_feb5d"]
 [ext_resource type="PackedScene" uid="uid://d225k0aypbqlp" path="res://levels/world.tscn" id="4_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://2om16o6x7jah" path="res://hud.tscn" id="6_ryrav"]
@@ -13,8 +13,10 @@ max_radius = 221.0
 time_at_max_growth = 0.0
 cooldown = 0.33
 growth_type = 5
+max_usage = 30
 
 [node name="Game" type="Node2D" unique_id=2094557731]
+position = Vector2(96, -99)
 script = ExtResource("1_7jktm")
 
 [node name="PlayerCamera" type="Camera2D" parent="." unique_id=975741464 node_paths=PackedStringArray("player")]
@@ -23,11 +25,13 @@ script = ExtResource("3_feb5d")
 player = NodePath("../Player")
 
 [node name="World" parent="." unique_id=1989093615 instance=ExtResource("4_fc0e3")]
+position = Vector2(-117, -114)
 
 [node name="Player" parent="." unique_id=56246929 node_paths=PackedStringArray("hud") instance=ExtResource("2_e2o6t")]
-position = Vector2(25, 113)
+position = Vector2(-93, -19)
 move_speed = 115.0
 jump_strength = 140.0
+max_num_air_jumps = 2
 air_jump_strength = 135.0
 signal_settings = SubResource("Resource_7jktm")
 hud = NodePath("../HUD")
