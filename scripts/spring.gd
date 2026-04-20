@@ -8,6 +8,7 @@ func _ready() -> void:
 	anim = %Anim as AnimatedSprite2D
 	anim.sprite_frames.set_animation_loop("jump", false)
 	anim.sprite_frames.set_animation_loop("idle", false)
+	anim.play("idle")
 
 
 func _on_body_entered(body: Node2D) -> void:

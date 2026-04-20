@@ -24,7 +24,7 @@ var collected_keys: int = 0:
 			@warning_ignore("unsafe_property_access")
 			%BlueComplete.visible = true
 			
-		if collected_keys == (Key.KeyType.RED | Key.KeyType.BLUE):
+		if collected_keys == Key.KeyType.ALL:
 			Stats.is_tracking_elapsed_time = false
 			get_tree().change_scene_to_file("res://menus/game_over.tscn")
 
