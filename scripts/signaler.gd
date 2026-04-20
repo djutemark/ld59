@@ -11,7 +11,15 @@ extends Area2D
 
 var is_active: bool = false
 var current_visible_invisibiles: Array[Invisibility] = []
-var num_uses: int = 0
+var num_uses: int = 0:
+	get:
+		return num_uses
+	set(value):
+		print("setting num_uses = ", value)
+		num_uses = value
+		if hud != null:
+			hud.current_signal_uses = value
+
 
 var hud: HUD # Set by caller (end of game jam, it's OK to take shortcuts!)
 	
@@ -23,11 +31,11 @@ func _ready() -> void:
 
 
 func make_signal() -> void:
+	print("num_uses >= settings.max_usage = ", num_uses >= settings.max_usage)
 	if is_active or num_uses >= settings.max_usage:
 		return
 	is_active = true
 	num_uses += 1
-	hud.current_signal_uses = num_uses
 
 	@warning_ignore("unsafe_property_access", "unsafe_cast")
 	var shape := %SignalHitbox.shape as CircleShape2D
@@ -64,7 +72,6 @@ func make_signal() -> void:
 
 func reset_signals() -> void:
 	num_uses = 0
-	hud.current_signal_uses = num_uses
 
 
 func try_activate_invisibility(other: Node2D) -> void:

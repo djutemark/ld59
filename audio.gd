@@ -45,7 +45,6 @@ func _ready() -> void:
 
 func play(sound: Sound) -> void:
 	var stream = _sound_to_stream(sound)
-	print("playing sound with stream ", stream)
 	
 	if stream != null:
 		var pitch := _sound_pitch(sound)

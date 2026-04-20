@@ -109,6 +109,13 @@ func update_signaler() -> void:
 	%Signaler.settings = signal_settings
 
 
+func add_max_jumps(num_extra_signals: int) -> void:
+	signal_settings.max_usage += num_extra_signals
+	@warning_ignore("unsafe_property_access", "unsafe_cast")
+	%Signaler.num_uses -= maxi((%Signaler.num_uses as int) - num_extra_signals, 0)
+	update_signaler()
+
+
 func do_jump(dir: Vector2) -> void:
 	do_jump_called = true
 	velocity = dir

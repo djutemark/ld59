@@ -9,7 +9,6 @@ func _ready() -> void:
 func _on_body_entered(other: Node2D):
 	var player = other as Player
 	if player:
-		player.signal_settings.max_usage += num_extra_signals
-		player.update_signaler()
+		player.add_max_jumps(num_extra_signals)
 		Audio.play(Audio.Sound.Pickup)
 	queue_free()

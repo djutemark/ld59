@@ -52,7 +52,7 @@ static func seconds_to_display(total_seconds: float) -> String:
 
 func _update_uses_text() -> void:
 	@warning_ignore("unsafe_property_access")
-	%NumUses.text = "Signals: %d" % [max_signal_uses - current_signal_uses]
+	%NumUses.text = "Signals: %d / %d" % [max_signal_uses - current_signal_uses, max_signal_uses]
 
 func _add_keys_gui(keys: int) -> void:
 	for i in range(3):

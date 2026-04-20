@@ -36,4 +36,5 @@ func _ready() -> void:
 func _on_body_entered(other: Node2D) -> void:
 	var player = other as Player
 	if player:
-		collected_keys = player.collected_keys
+		collected_keys = collected_keys | player.collected_keys
+		player.collected_keys = 0
