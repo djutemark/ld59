@@ -1,23 +1,23 @@
 [gd_scene format=3 uid="uid://fkt8806f2krw"]
 
-[ext_resource type="SpriteFrames" uid="uid://2yku2vi5j8ri" path="res://sprite_frames/teleporter_sprite_frames.tres" id="1_kwdly"]
+[ext_resource type="SpriteFrames" uid="uid://bab4io4v6k6cw" path="res://sprite_frames/teleporter_sprite_frames.tres" id="1_kwdly"]
 [ext_resource type="Script" uid="uid://dxkh6ss2xfmng" path="res://scripts/teleporter_sprite.gd" id="1_tqrjm"]
 
 [node name="TeleporterSprite" type="Node2D" unique_id=1914953201]
 script = ExtResource("1_tqrjm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=381849664]
-position = Vector2(-8, -8)
+position = Vector2(0, -17)
 sprite_frames = ExtResource("1_kwdly")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=10888263]
-position = Vector2(8, -8)
+position = Vector2(16, -17)
 sprite_frames = ExtResource("1_kwdly")
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." unique_id=1433635698]
-position = Vector2(8, 8)
+position = Vector2(16, -1)
 sprite_frames = ExtResource("1_kwdly")
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="." unique_id=1995546414]
-position = Vector2(-8, 8)
+position = Vector2(0, -1)
 sprite_frames = ExtResource("1_kwdly")

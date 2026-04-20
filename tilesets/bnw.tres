@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b7swtng3asa25" path="res://monochrome_tilemap_transparent.png" id="1_lvsi6"]
 [ext_resource type="PackedScene" uid="uid://d2ilfh4o6l3ac" path="res://objects/blinking_triangle.tscn" id="2_dejf0"]
+[ext_resource type="PackedScene" uid="uid://fkt8806f2krw" path="res://objects/teleporter_sprite.tscn" id="3_7e6hb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dejf0"]
 texture = ExtResource("1_lvsi6")
@@ -802,6 +803,7 @@ separation = Vector2i(1, 1)
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_7e6hb"]
 resource_name = "Animated Backgrounds"
 scenes/1/scene = ExtResource("2_dejf0")
+scenes/2/scene = ExtResource("3_7e6hb")
 
 [resource]
 physics_layer_0/collision_layer = 1
