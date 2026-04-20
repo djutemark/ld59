@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bu5nktww1lka5" path="res://scripts/spring.gd" id="1_vfg45"]
 [ext_resource type="Texture2D" uid="uid://b7swtng3asa25" path="res://monochrome_tilemap_transparent.png" id="2_14s6j"]
+[ext_resource type="SpriteFrames" uid="uid://dfvpgflacw0w" path="res://sprite_frames/spring_sprite_frames.tres" id="3_14s6j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wwtle"]
 atlas = ExtResource("2_14s6j")
@@ -14,6 +15,7 @@ size = Vector2(14, 7)
 script = ExtResource("1_vfg45")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1582987330]
+visible = false
 modulate = Color(0, 0, 1, 1)
 position = Vector2(0, -5)
 texture = SubResource("AtlasTexture_wwtle")
@@ -21,5 +23,11 @@ texture = SubResource("AtlasTexture_wwtle")
 [node name="JumpArea" type="CollisionShape2D" parent="." unique_id=1294789327]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_223gx")
+
+[node name="Anim" type="AnimatedSprite2D" parent="." unique_id=1083707572]
+unique_name_in_owner = true
+modulate = Color(0.37900856, 0.5726988, 1, 1)
+sprite_frames = ExtResource("3_14s6j")
+animation = &"jump"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
