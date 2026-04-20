@@ -1,12 +1,23 @@
 [gd_scene format=3 uid="uid://c5y3sh3aypmrg"]
 
 [ext_resource type="Script" uid="uid://b24ou7wf1nnsy" path="res://audio.gd" id="1_qc0l7"]
-[ext_resource type="AudioStream" uid="uid://l0mdyh2tmwbq" path="res://sfx/slime_000.ogg" id="2_q45hi"]
-[ext_resource type="AudioStream" uid="uid://b5loq26uq2n8j" path="res://sfx/tokyorifft-interstellar-374344.mp3" id="2_ybffx"]
-[ext_resource type="AudioStream" uid="uid://d4m2k3cicl1sr" path="res://sfx/doorOpen_000.ogg" id="4_p423y"]
+[ext_resource type="AudioStream" uid="uid://b5loq26uq2n8j" path="res://sfx/tokyorifft-interstellar-374344.mp3" id="2_5olcg"]
+[ext_resource type="Script" uid="uid://bm8pu53m012s7" path="res://scripts/resources/sound_collection.gd" id="3_0svpk"]
+[ext_resource type="AudioStream" uid="uid://cjg0m1desjn44" path="res://sfx/doorOpen_002.ogg" id="3_ybffx"]
+[ext_resource type="AudioStream" uid="uid://cx7li048pksgv" path="res://sfx/laserLarge_002.ogg" id="4_0svpk"]
+[ext_resource type="AudioStream" uid="uid://b568ptarhy8od" path="res://sfx/forceField_000.ogg" id="5_5olcg"]
+[ext_resource type="AudioStream" uid="uid://8hb2om0cpe26" path="res://sfx/doorClose_002.ogg" id="6_pgqns"]
+[ext_resource type="AudioStream" uid="uid://bqpwukjkk4eg3" path="res://sfx/explosionCrunch_000.ogg" id="7_cqcg1"]
+
+[sub_resource type="Resource" id="Resource_5olcg"]
+script = ExtResource("3_0svpk")
+sounds = Array[AudioStream]([ExtResource("4_0svpk"), ExtResource("5_5olcg")])
+metadata/_custom_type_script = "uid://bm8pu53m012s7"
 
 [node name="Audio" type="Node" unique_id=322574916]
 script = ExtResource("1_qc0l7")
-background = ExtResource("2_ybffx")
-jump = ExtResource("2_q45hi")
-signal_pulse = ExtResource("4_p423y")
+background = ExtResource("2_5olcg")
+jump = ExtResource("3_ybffx")
+signal_pulse = SubResource("Resource_5olcg")
+respawn = ExtResource("6_pgqns")
+out_of_bounds = ExtResource("7_cqcg1")

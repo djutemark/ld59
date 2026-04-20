@@ -13,4 +13,4 @@ func _on_body_entered(other: Node2D) -> void:
 	if p:
 		p.unset_checkpoint()
 		p.respawn_position = teleport_target
-		p.respawn()
+		p.respawn(Player.RespawnReason.Teleport)

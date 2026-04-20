@@ -5,6 +5,7 @@ func _ready() -> void:
 
 
 func _on_body_entered(other: Node2D):
-	if other is Player:
-		other.max_num_air_jumps += 1
+	var p := other as Player
+	if p:
+		p.max_num_air_jumps += 1
 	queue_free()
