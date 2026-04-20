@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://lhcg5fvks6eg" path="res://scripts/signal_settings.gd" id="3_fc0e3"]
 [ext_resource type="Script" uid="uid://dvloye4naumf2" path="res://scripts/player_camera.gd" id="3_feb5d"]
 [ext_resource type="PackedScene" uid="uid://d225k0aypbqlp" path="res://levels/world.tscn" id="4_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://2om16o6x7jah" path="res://hud.tscn" id="6_ryrav"]
 
 [sub_resource type="Resource" id="Resource_7jktm"]
 script = ExtResource("3_fc0e3")
@@ -23,10 +24,14 @@ player = NodePath("../Player")
 
 [node name="World" parent="." unique_id=1989093615 instance=ExtResource("4_fc0e3")]
 
-[node name="Player" parent="." unique_id=56246929 instance=ExtResource("2_e2o6t")]
+[node name="Player" parent="." unique_id=56246929 node_paths=PackedStringArray("hud") instance=ExtResource("2_e2o6t")]
 position = Vector2(25, 113)
 move_speed = 115.0
 jump_strength = 140.0
 max_num_air_jumps = 0
 air_jump_strength = 135.0
 signal_settings = SubResource("Resource_7jktm")
+hud = NodePath("../HUD")
+
+[node name="HUD" parent="." unique_id=1372894820 instance=ExtResource("6_ryrav")]
+unique_name_in_owner = true

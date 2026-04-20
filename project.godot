@@ -17,7 +17,6 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-HUD="*uid://2om16o6x7jah"
 Stats="*uid://c0na3u2og2nh5"
 Audio="*uid://c5y3sh3aypmrg"
 

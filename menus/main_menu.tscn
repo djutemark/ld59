@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cp15ksbb6rtju"]
+
+[ext_resource type="Script" uid="uid://c6wljpsfmgos0" path="res://menus/main_menu.gd" id="1_8gy84"]
+
+[node name="MainMenu" type="HFlowContainer" unique_id=788982563]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -22.0
+offset_right = 88.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/v_separation = 20
+alignment = 1
+script = ExtResource("1_8gy84")
+
+[node name="Title" type="Label" parent="." unique_id=1846873549]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Klasifabb's Adventure!"
+
+[node name="StartGameButton" type="Button" parent="." unique_id=1482736720]
+layout_mode = 2
+text = "Start Game!"
+
+[connection signal="button_down" from="StartGameButton" to="." method="_on_start_game_button_button_down"]

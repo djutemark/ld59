@@ -6,12 +6,15 @@ extends Area2D
 		return settings
 	set(value):
 		settings = value
-		HUD.max_signal_uses = value.max_usage
+		if hud != null:
+			hud.max_signal_uses = value.max_usage
 
 var is_active: bool = false
 var current_visible_invisibiles: Array[Invisibility] = []
 var num_uses: int = 0
 
+var hud: HUD # Set by caller (end of game jam, it's OK to take shortcuts!)
+	
 const RADIUS_SPRITE_RATIO = 0.5 # Very much a magic number
 
 func _ready() -> void:
@@ -23,7 +26,7 @@ func make_signal() -> void:
 		return
 	is_active = true
 	num_uses += 1
-	HUD.current_signal_uses = num_uses
+	hud.current_signal_uses = num_uses
 
 	var shape: CircleShape2D = %SignalHitbox.shape
 	if shape != null:
@@ -55,7 +58,7 @@ func make_signal() -> void:
 
 func reset_signals() -> void:
 	num_uses = 0
-	HUD.current_signal_uses = num_uses
+	hud.current_signal_uses = num_uses
 
 
 func try_activate_invisibility(other: Node2D) -> void:

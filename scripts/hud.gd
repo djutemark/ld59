@@ -1,3 +1,4 @@
+class_name HUD
 extends CanvasLayer
 
 @export var gui_key: PackedScene

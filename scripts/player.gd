@@ -12,7 +12,15 @@ extends CharacterBody2D
 		return signal_settings
 	set(value):
 		signal_settings = value
-		update_signaler_settings()
+		update_signaler()
+
+@export var hud: HUD:
+	get:
+		return hud
+	set(value):
+		hud = value
+		update_signaler()
+
 
 var original_position: Vector2
 var current_checkpoint: Checkpoint = null
@@ -26,7 +34,7 @@ var collected_keys: int = 0:
 		return collected_keys
 	set(value):
 		collected_keys = value
-		HUD.collected_keys = value
+		hud.collected_keys = value
 
 signal warning_activated
 signal warning_deactivated
@@ -36,7 +44,7 @@ var respawn_position:
 
 func _ready() -> void:
 	original_position = position
-	update_signaler_settings()
+	update_signaler()
 	
 	%WarningSprite.visible = false
 	warning_activated.connect(func(): 
@@ -65,7 +73,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			respawn()
 
 
-func update_signaler_settings() -> void:
+func update_signaler() -> void:
+	%Signaler.hud = hud
 	%Signaler.settings = signal_settings
 
 
