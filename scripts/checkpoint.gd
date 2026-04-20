@@ -14,7 +14,9 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func _set_flag_color(color: Color) -> void:
+	@warning_ignore("unsafe_property_access")
 	%Flag.modulate = color
+	@warning_ignore("unsafe_property_access")
 	%Flag2.modulate = color
 
 

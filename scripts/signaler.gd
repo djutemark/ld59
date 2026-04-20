@@ -18,6 +18,7 @@ var hud: HUD # Set by caller (end of game jam, it's OK to take shortcuts!)
 const RADIUS_SPRITE_RATIO = 0.5 # Very much a magic number
 
 func _ready() -> void:
+	@warning_ignore("unsafe_property_access")
 	%SignalHitbox.disabled = true
 
 
@@ -28,11 +29,14 @@ func make_signal() -> void:
 	num_uses += 1
 	hud.current_signal_uses = num_uses
 
-	var shape: CircleShape2D = %SignalHitbox.shape
+	@warning_ignore("unsafe_property_access", "unsafe_cast")
+	var shape := %SignalHitbox.shape as CircleShape2D
 	if shape != null:
 		Audio.play(Audio.Sound.SignalPulse)
 		Stats.total_num_signals_made += 1
+		@warning_ignore("unsafe_property_access")
 		%PulseSprite.scale = Vector2.ZERO
+		@warning_ignore("unsafe_property_access")
 		%SignalHitbox.disabled = false
 		shape.radius = 0
 		var t = create_tween()
@@ -43,7 +47,9 @@ func make_signal() -> void:
 		t.tween_property(%PulseSprite, "scale", RADIUS_SPRITE_RATIO * Vector2(settings.max_radius, settings.max_radius), settings.grow_duration)
 		await t.finished
 		await get_tree().create_timer(settings.time_at_max_growth).timeout
+		@warning_ignore("unsafe_property_access")
 		%SignalHitbox.disabled = true
+		@warning_ignore("unsafe_property_access")
 		%PulseSprite.scale = Vector2.ZERO
 	
 		for invisibility in current_visible_invisibiles:

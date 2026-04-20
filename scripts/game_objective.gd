@@ -7,15 +7,21 @@ var collected_keys: int = 0:
 		collected_keys = value
 		
 		if collected_keys & Key.KeyType.RED:
+			@warning_ignore("unsafe_property_access")
 			%RedIncomplete.visible = false
+			@warning_ignore("unsafe_property_access")
 			%RedComplete.visible = true
 			
 		if collected_keys & Key.KeyType.GREEN:
+			@warning_ignore("unsafe_property_access")
 			%GreenIncomplete.visible = false
+			@warning_ignore("unsafe_property_access")
 			%GreenComplete.visible = true
 			
 		if collected_keys & Key.KeyType.BLUE:
+			@warning_ignore("unsafe_property_access")
 			%BlueIncomplete.visible = false
+			@warning_ignore("unsafe_property_access")
 			%BlueComplete.visible = true
 			
 		if collected_keys == (Key.KeyType.RED | Key.KeyType.BLUE):

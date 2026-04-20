@@ -10,8 +10,11 @@ func _ready() -> void:
 
 func _update_visibility() -> void:
 	var color := Key.key_type_to_color(required_key)
+	@warning_ignore("unsafe_property_access")
 	%TrapdoorSprite1.modulate = color
+	@warning_ignore("unsafe_property_access")
 	%TrapdoorSprite2.modulate = color
+	@warning_ignore("unsafe_property_access")
 	%TrapdoorSprite3.modulate = color
 
 

@@ -17,9 +17,9 @@ func make_invisible() -> void:
 
 
 static func try_get_invisibility(node: Node2D) -> Invisibility:
-	var invisibilities = node.find_children("*", "Invisibility", false)
+	var invisibilities := node.find_children("*", "Invisibility", false)
 	
 	if invisibilities.size() > 0:
-		var invisible_node = invisibilities[0] as Invisibility
+		var invisible_node := invisibilities[0] as Invisibility
 		return invisible_node
 	return null

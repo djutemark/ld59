@@ -46,11 +46,14 @@ func _ready() -> void:
 	original_position = position
 	update_signaler()
 	
+	@warning_ignore("unsafe_property_access")
 	%WarningSprite.visible = false
 	warning_activated.connect(func(): 
+		@warning_ignore("unsafe_property_access")
 		%WarningSprite.visible = true
 	)
 	warning_deactivated.connect(func(): 
+		@warning_ignore("unsafe_property_access")
 		%WarningSprite.visible = false
 	)
 
@@ -68,15 +71,18 @@ func _physics_process(_delta: float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventKey:
-		if event.keycode == KEY_ESCAPE:
+	var key_event := event as InputEventKey
+	if key_event:
+		if key_event.keycode == KEY_ESCAPE:
 			get_tree().quit()
-		if event.keycode == KEY_R:
+		if key_event.keycode == KEY_R:
 			respawn()
 
 
 func update_signaler() -> void:
+	@warning_ignore("unsafe_property_access")
 	%Signaler.hud = hud
+	@warning_ignore("unsafe_property_access")
 	%Signaler.settings = signal_settings
 
 
