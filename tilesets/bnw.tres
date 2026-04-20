@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" format=3 uid="uid://cakacx3sxy8db"]
 
 [ext_resource type="Texture2D" uid="uid://b7swtng3asa25" path="res://monochrome_tilemap_transparent.png" id="1_lvsi6"]
-[ext_resource type="PackedScene" uid="uid://d2ilfh4o6l3ac" path="res://objects/blinking_triangle.tscn" id="2_dejf0"]
+[ext_resource type="PackedScene" path="res://objects/blinking_triangle.tscn" id="2_dejf0"]
 [ext_resource type="PackedScene" uid="uid://fkt8806f2krw" path="res://objects/teleporter_sprite.tscn" id="3_7e6hb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dejf0"]
