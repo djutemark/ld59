@@ -22,6 +22,7 @@ func _set_flag_color(color: Color) -> void:
 
 func highlight() -> void:
 	_set_flag_color(active_color)
+	Audio.play(Audio.Sound.CheckpointActivated)
 
 
 func dehighlight() -> void:
