@@ -2,7 +2,7 @@ extends Control
 
 
 func _ready() -> void:
-	%StatsText.text = _build_stats_text()
+	(%StatsText as Label).text = _build_stats_text()
 
 
 func _on_to_main_menu_button_down() -> void:

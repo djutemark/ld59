@@ -3,7 +3,7 @@ extends Container
 
 func _ready() -> void:
 	if OS.has_feature("web"):
-		%QuitGameButton.visible = false
+		(%QuitGameButton as Button).visible = false
 
 
 func _on_start_game_button_button_down() -> void:
