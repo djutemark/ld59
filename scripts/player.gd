@@ -63,7 +63,7 @@ signal warning_activated
 signal warning_deactivated
 
 var respawn_position:
-	get: return current_checkpoint.position if current_checkpoint != null else original_position
+	get: return current_checkpoint.global_position if current_checkpoint != null else original_position
 
 func _ready() -> void:
 	original_position = position
@@ -173,7 +173,6 @@ func reset_signals() -> void:
 	
 func take_damage(type: DamageType) -> void:
 	Stats.total_num_deaths += 1
-
 	respawn(RespawnReason.Death if type == DamageType.Spikes else RespawnReason.OutOfBounds)
 
 
